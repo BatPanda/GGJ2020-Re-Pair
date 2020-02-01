@@ -6,6 +6,8 @@ public class ChooseCharacterScript : MonoBehaviour
 {
     public GameObject spotlight;
 
+    private GameSettings gameSettings;
+
     private int playerUsing = -1;
 
     public bool timeIsStopped = false;
@@ -26,6 +28,7 @@ public class ChooseCharacterScript : MonoBehaviour
     private void Start()
     {
         originalSpotlightPos = spotlight.transform.position;
+        gameSettings = FindObjectOfType<GameSettings>();
     }
 
 
@@ -50,14 +53,18 @@ public class ChooseCharacterScript : MonoBehaviour
 
             if(timeIsStopped && i == FindObjectOfType<GameSettings>().playerSettings[playerUsing].playerNum)
             {
-                ManageSpotlightMovement(i);
+                ManageSpotlightMovement(i, playerUsing);
             }
         }
     }
 
-    void ManageSpotlightMovement(int controllerIndex)
+    void ManageSpotlightMovement(int controllerIndex, int playerIndex)
     {
         spotlight.SetActive(true);
+
+        SpriteRenderer spotlightRenderer = spotlight.GetComponent<SpriteRenderer>();
+
+        spotlightRenderer.color = gameSettings.playerSettings[playerIndex].playerColor;
 
         float moveHorizontal = Input.GetAxisRaw("Horizontal" + controllerIndex);
         float moveVertical = Input.GetAxisRaw("Vertical" + controllerIndex);
@@ -102,11 +109,17 @@ public class ChooseCharacterScript : MonoBehaviour
 
         if (freezeTime > startFreezeTime)
         {
+            spotlight.GetComponent<SpotlightScript>().RevertColours();
             spotlight.SetActive(false);
             spotlight.transform.position = originalSpotlightPos;
             CharactersCanMove(true);
             timeIsStopped = false;
             freezeTime = 0;
         }
+    }
+
+    public int GetCharacterUsing()
+    {
+        return playerUsing;
     }
 }

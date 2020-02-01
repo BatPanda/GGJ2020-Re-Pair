@@ -4,36 +4,52 @@ using UnityEngine;
 
 public class SpotlightScript : MonoBehaviour
 {
+    GameSettings gameSettings;
+
+    PlayerController[] players;
+
+    AiBehaviour[] AICharacters;
+
+    private void Start()
+    {
+        gameSettings = FindObjectOfType<GameSettings>();
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && FindObjectOfType<ChooseCharacterScript>().GetCharacterUsing() != -1)
         {
-            SpriteRenderer[] sprites = collision.GetComponentsInChildren<SpriteRenderer>();
-
-            foreach(SpriteRenderer sprite in sprites)
-            {
-                if(sprite.gameObject.transform.parent != null)
-                {
-                    sprite.enabled = true;
-                }
-            }
+            collision.GetComponent<SpriteRenderer>().color = gameSettings.playerSettings[FindObjectOfType<ChooseCharacterScript>().GetCharacterUsing()].playerColor;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            SpriteRenderer[] sprites = collision.GetComponentsInChildren<SpriteRenderer>();
+        RevertColours(collision);
+    }
 
-            foreach (SpriteRenderer sprite in sprites)
-            {
-                if (sprite.gameObject.transform.parent != null)
-                {
-                    sprite.enabled = false;
-                }
-            }
+    public void RevertColours(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "AI")
+        {
+            collision.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+    }
+
+    public void RevertColours()
+    {
+
+        players = FindObjectsOfType<PlayerController>();
+        AICharacters = FindObjectsOfType<AiBehaviour>();
+
+        foreach (PlayerController player in players)
+        {
+            player.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+
+        foreach(AiBehaviour ai in AICharacters)
+        {
+            ai.GetComponent<SpriteRenderer>().color = Color.white;
         }
     }
 }
