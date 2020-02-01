@@ -36,6 +36,11 @@ public class PlayerController : MonoBehaviour
         if(canMove)
         {
             transform.position += new Vector3(movementSpeed * moveHorizontal, movementSpeed * moveVertical, 0) * Time.deltaTime;
+
+            Vector2 screenTopleft = Camera.main.ScreenToWorldPoint(new Vector2(0, 0));
+            Vector2 screenBottomRight = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, screenTopleft.x, screenBottomRight.x), Mathf.Clamp(transform.position.y, screenTopleft.y, screenBottomRight.y));
         }
 
         //handles animation between walking and idle.
