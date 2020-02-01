@@ -8,7 +8,7 @@ public class ChooseCharacterScript : MonoBehaviour
 
     private int playerUsing = -1;
 
-    private bool timeIsStopped = false;
+    public bool timeIsStopped = false;
 
     public float spotLightMoveSpeed = 5.0f;
 
@@ -18,17 +18,13 @@ public class ChooseCharacterScript : MonoBehaviour
     public float minPositionX = -10;
     public float minPositionY = -4;
 
-    private float freezeTime;
+    public float freezeTime = 0;
     public float startFreezeTime = 10;
-
-  
 
     private Vector3 originalSpotlightPos;
 
     private void Start()
     {
-        freezeTime = startFreezeTime + Time.time;
-
         originalSpotlightPos = spotlight.transform.position;
     }
 
@@ -101,13 +97,15 @@ public class ChooseCharacterScript : MonoBehaviour
 
     void FreezeTimer()
     {
-        if(Time.time > freezeTime)
+        freezeTime += Time.deltaTime;
+
+        if (freezeTime > startFreezeTime)
         {
             spotlight.SetActive(false);
             spotlight.transform.position = originalSpotlightPos;
             CharactersCanMove(true);
             timeIsStopped = false;
-            freezeTime = startFreezeTime + Time.time;
+            freezeTime = 0;
         }
     }
 }

@@ -75,6 +75,5 @@ public class ScoreUIHandler : MonoBehaviour
     public void IncreaseScore(int player, int increase)
     {
         players[player].score += increase;
-        Debug.Log(players[player].score);
     }
 }
