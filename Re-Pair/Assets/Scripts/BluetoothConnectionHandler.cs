@@ -5,8 +5,6 @@ using UnityEngine;
 public class BluetoothConnectionHandler : MonoBehaviour
 {
     MusicManager musicManager;
-
-
     GameSettings gameSettings;
 
     public GameObject playerConnecting;
@@ -23,7 +21,7 @@ public class BluetoothConnectionHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag.Equals("Player"))
+        if (collision.tag.Equals("Player") && playerConnecting == null)
         {
             playerConnecting = collision.gameObject;
             playerInRange = true;
