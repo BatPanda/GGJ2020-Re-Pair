@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 544}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -524,7 +524,7 @@ MonoBehaviour:
     m_LockTracker:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
-  m_WindowGUID: 6381c1d0765131e439b4b268a5d6281c
+  m_WindowGUID: 75e3cd32b35b369408cd06a211992b55
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -552,7 +552,7 @@ MonoBehaviour:
     height: 554
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
-  m_WindowGUID: 4e08e8126065d8446bc023848c191fef
+  m_WindowGUID: cbab3af925454804e87ab76b7251a2d3
   m_Gizmos: 1
   m_SceneIsLit: 1
   m_SceneLighting: 1
