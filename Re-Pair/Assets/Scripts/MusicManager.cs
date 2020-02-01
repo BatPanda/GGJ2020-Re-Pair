@@ -9,34 +9,34 @@ public class MusicManager : MonoBehaviour
     AudioClip player_three_music;
     AudioClip player_four_music;
 
-    PlayerController.players musicPlaying;
+    int musicPlaying;
 
-    public void ChangeMusic(PlayerController.players playerNumber)
+    public void ChangeMusic(int playerNumber)
     {
         Debug.Log("Changing Music to: " + playerNumber);
-        if (playerNumber == PlayerController.players.player_1)
+        if (playerNumber == 1)
         {
             // Play Player One Music
             musicPlaying = playerNumber;
         }
-        else if (playerNumber == PlayerController.players.player_2)
+        else if (playerNumber == 2)
         {
             // Play Player Two Music
             musicPlaying = playerNumber;
         }
-        else if (playerNumber == PlayerController.players.player_3)
+        else if (playerNumber == 3)
         {
             // Play Player Three Music
             musicPlaying = playerNumber;
         }
-        else if (playerNumber == PlayerController.players.player_4)
+        else if (playerNumber == 4)
         {
             // Play Player our Music
             musicPlaying = playerNumber;
         }
     }
 
-    public PlayerController.players MusicPlaying()
+    public int MusicPlaying()
     {
         return musicPlaying;
     }
