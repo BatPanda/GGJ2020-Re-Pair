@@ -11,11 +11,13 @@ public class PlayerController : MonoBehaviour
 
     public float score = 0;
 
-    //private Animator anim;
+    private Animator anim;
+
+    public bool canMove = true;
 
     void Start()
     {
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
 
@@ -31,9 +33,12 @@ public class PlayerController : MonoBehaviour
         float moveHorizontal = Input.GetAxisRaw("Horizontal" + controllerNumber);
         float moveVertical = Input.GetAxisRaw("Vertical" +  controllerNumber);
 
-        transform.position += new Vector3(movementSpeed * moveHorizontal, movementSpeed * moveVertical, 0) * Time.deltaTime;
+        if(canMove)
+        {
+            transform.position += new Vector3(movementSpeed * moveHorizontal, movementSpeed * moveVertical, 0) * Time.deltaTime;
+        }
 
-        /*handles animation between walking and idle.
+        //handles animation between walking and idle.
         if(moveVertical > 0 || moveHorizontal > 0)
         {
             anim.SetBool("isWalking", true);
@@ -42,6 +47,6 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("isWalking", false);
         }
-        */
+        
     }
 }

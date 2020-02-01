@@ -37,10 +37,14 @@ public class UIHandler : MonoBehaviour
             scores[i].GetComponentInChildren<Text>().text = players[i].score.ToString();
         }
 
-        for (int i = 0; i < players.Length; i++)
+        if (totalScore > 0)
         {
-            scores[i].value = players[i].score / totalScore;
+            for (int i = 0; i < players.Length; i++)
+            {
+                scores[i].value = players[i].score / totalScore;
+            }
         }
+        
     }
 
     void updateOutline()
@@ -49,14 +53,6 @@ public class UIHandler : MonoBehaviour
 
         for (int i = 0; i < players.Length; i++)
         {
-            if (players[winningPlayer].score < players[i].score)
-            {
-                winningPlayer = i;
-            }
-        }
-        if (totalScore > 0)
-        {
-<<<<<<< Updated upstream
             if (i == winningPlayer)
             {
                 scores[i].GetComponentInChildren<Outline>().effectColor = new Color(0, 0, 0, 1);
@@ -64,11 +60,6 @@ public class UIHandler : MonoBehaviour
             else
             {
                 scores[i].GetComponentInChildren<Outline>().effectColor = new Color(0, 0, 0, 0);
-=======
-            for (int i = 0; i < players.Length; i++)
-            {
-                scores[i].value = players[i].score / totalScore;
->>>>>>> Stashed changes
             }
         }
     }

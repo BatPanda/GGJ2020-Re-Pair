@@ -6,10 +6,14 @@ public class SetupGame : MonoBehaviour
 {
     public GameSettings gameSettings;
 
-    public GameObject playerPrefab;
+    public GameObject[] playerPrefab;
+
+    private int randomPlayerNumber;
 
     private void Awake()
     {
+        Debug.Log(gameSettings.playerSettings.Length);
+
         if(!gameSettings)
         {
             gameSettings = FindObjectOfType<GameSettings>();
@@ -17,9 +21,11 @@ public class SetupGame : MonoBehaviour
 
         for (int i = 0; i < gameSettings.playerSettings.Length; i++)
         {
+            randomPlayerNumber = Random.Range(0, playerPrefab.Length);
+
             if(gameSettings.playerSettings[i].connected)
             {
-                Instantiate(playerPrefab).GetComponent<PlayerController>().controllerNumber = gameSettings.playerSettings[i].playerNum;
+                Instantiate(playerPrefab[randomPlayerNumber]).GetComponent<PlayerController>().controllerNumber = gameSettings.playerSettings[i].playerNum;
             }
         }
     }

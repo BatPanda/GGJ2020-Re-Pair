@@ -6,13 +6,13 @@ public class Dancefloor : MonoBehaviour
 {
     private GameSettings gameSettings;
     private MusicManager musicManager;
-    private UIHandler uiHandler;
+    private ScoreUIHandler uiHandler;
 
     private void Awake()
     {
         gameSettings = FindObjectOfType<GameSettings>();
         musicManager = FindObjectOfType<MusicManager>();
-        uiHandler = FindObjectOfType<UIHandler>();
+        uiHandler = FindObjectOfType<ScoreUIHandler>();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
