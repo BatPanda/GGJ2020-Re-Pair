@@ -554,8 +554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSettings: {fileID: 675826794}
-  playerPrefab: {fileID: 6955464818211160852, guid: ea421704bce48804797c616eec42f3c0,
-    type: 3}
+  playerPrefab: []
 --- !u!4 &633639261
 Transform:
   m_ObjectHideFlags: 0
@@ -637,7 +636,7 @@ GameObject:
   - component: {fileID: 816694343}
   - component: {fileID: 816694342}
   m_Layer: 0
-  m_Name: chooseplayer
+  m_Name: Choose Player Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -834,7 +833,7 @@ GameObject:
   - component: {fileID: 1073442412}
   - component: {fileID: 1073442413}
   m_Layer: 0
-  m_Name: spotlight
+  m_Name: Spotlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
