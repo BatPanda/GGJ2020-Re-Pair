@@ -22,7 +22,8 @@ public class SpawnAis : MonoBehaviour
 
     public Vector2 screenStartPos;
     public Vector2 screenEndPos;
-    public float speed;
+    public float lowestspeed;
+    public float highestspeed;
     public float maxDistanceToGoal;
 
     public float minWaitingTime;
@@ -33,6 +34,7 @@ public class SpawnAis : MonoBehaviour
     {
         int[] size = { (int)(screenEndPos.x - screenStartPos.x), (int)(screenEndPos.y - screenStartPos.y), 0 };
         size[2] = size[0] * size[1] * number_box_for_one * number_box_for_one;
+        Vector2 screenSize = screenEndPos - screenStartPos;
 
         heatmap = new Vector3[size[2]];
 
@@ -74,20 +76,22 @@ public class SpawnAis : MonoBehaviour
             totalWeights += weight;
 
 
-/*           Color colour = new Color(1 - weight, weight, 0, 1);
+            /*           Color colour = new Color(1 - weight, weight, 0, 1);
 
-            GameObject go = Instantiate(AiPrefab, new Vector2(heatmap[i].x, heatmap[i].y), Quaternion.identity);
-            go.GetComponent<SpriteRenderer>().color = colour;
-            go.transform.localScale = new Vector3(1 / (float)number_box_for_one, 1 / (float)number_box_for_one, 1);
-            */
+                        GameObject go = Instantiate(AiPrefab, new Vector2(heatmap[i].x, heatmap[i].y), Quaternion.identity);
+                        go.GetComponent<SpriteRenderer>().color = colour;
+                        go.transform.localScale = new Vector3(1 / (float)number_box_for_one, 1 / (float)number_box_for_one, 1);
+                        */
         }
 
         ///
+        
         for (int i = 0; i < nbOfAis; i++)
         {
             Vector2 position = new Vector2(Random.Range(screenStartPos.x, screenEndPos.x), Random.Range(screenStartPos.y, screenEndPos.y));
             GameObject go = Instantiate(AiPrefab, position, Quaternion.identity);
-            go.AddComponent<AiBehaviour>().s_AiBehaviour(heatmap, totalWeights, speed, maxDistanceToGoal, position, danceFloor, minWaitingTime, maxWaitingTime);
+            go.AddComponent<AiBehaviour>().s_AiBehaviour(heatmap, totalWeights, lowestspeed, highestspeed, maxDistanceToGoal, position, danceFloor, minWaitingTime, maxWaitingTime, screenSize.magnitude);
         }
+        
     }
 }

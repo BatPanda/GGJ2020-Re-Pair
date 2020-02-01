@@ -8,6 +8,11 @@ public class MusicSelector : MonoBehaviour
     private bool enabled = false;
     private bool musicSelected = false;
 
+    public AudioSource playerJoined;
+    public AudioSource moveCursor;
+    public AudioSource selected;
+    public AudioSource deselected;
+
     private int controllerNumber;
     private float inputDelay = 0f;
 
@@ -36,7 +41,11 @@ public class MusicSelector : MonoBehaviour
                 {
                     MoveCursorHorizontal(Input.GetAxis("Horizontal" + controllerNumber));
                     MoveCursorVertical(Input.GetAxis("Vertical" + controllerNumber));
-                    transform.position = musicSelections[currentSelection].transform.position;
+                    if (transform.position != musicSelections[currentSelection].transform.position)
+                    {
+                        transform.position = musicSelections[currentSelection].transform.position;
+                        moveCursor.Play();
+                    }
                 }
                 else
                 {
@@ -49,6 +58,7 @@ public class MusicSelector : MonoBehaviour
                     musicSelections[currentSelection].selected = true;
                     musicSelections[currentSelection].GetComponent<Image>().enabled = true;
                     musicSelections[currentSelection].GetComponent<Image>().color = playerColor;
+                    selected.Play();
                 }
             }
             else
@@ -58,6 +68,7 @@ public class MusicSelector : MonoBehaviour
                     musicSelected = false;
                     musicSelections[currentSelection].selected = false;
                     musicSelections[currentSelection].GetComponent<Image>().enabled = false;
+                    deselected.Play();
                 }
             }
         }
@@ -70,6 +81,7 @@ public class MusicSelector : MonoBehaviour
         transform.GetChild(0).GetComponent<Image>().enabled = true;
         currentSelection = 0;
         transform.position = musicSelections[0].transform.position;
+        playerJoined.Play();
     }
 
     void MoveCursorHorizontal(float horizontal)
