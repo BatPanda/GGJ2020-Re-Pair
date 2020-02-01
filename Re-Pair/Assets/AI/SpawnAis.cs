@@ -25,6 +25,8 @@ public class SpawnAis : MonoBehaviour
     public float speed;
     public float maxDistanceToGoal;
 
+    public float minWaitingTime;
+    public float maxWaitingTime;
 
     // Start is called before the first frame update
     void Start()
@@ -72,7 +74,7 @@ public class SpawnAis : MonoBehaviour
             totalWeights += weight;
 
 
-/*            Color colour = new Color(1 - weight, weight, 0, 1);
+/*           Color colour = new Color(1 - weight, weight, 0, 1);
 
             GameObject go = Instantiate(AiPrefab, new Vector2(heatmap[i].x, heatmap[i].y), Quaternion.identity);
             go.GetComponent<SpriteRenderer>().color = colour;
@@ -85,7 +87,7 @@ public class SpawnAis : MonoBehaviour
         {
             Vector2 position = new Vector2(Random.Range(screenStartPos.x, screenEndPos.x), Random.Range(screenStartPos.y, screenEndPos.y));
             GameObject go = Instantiate(AiPrefab, position, Quaternion.identity);
-            go.AddComponent<AiBehaviour>().s_AiBehaviour(heatmap, totalWeights, speed, maxDistanceToGoal, position);
+            go.AddComponent<AiBehaviour>().s_AiBehaviour(heatmap, totalWeights, speed, maxDistanceToGoal, position, danceFloor, minWaitingTime, maxWaitingTime);
         }
     }
 }

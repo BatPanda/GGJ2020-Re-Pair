@@ -6,8 +6,8 @@ public class AiBehaviour : MonoBehaviour
 {
     private float time;
 
-    private const float maxWaitTime = 5;
-    private const float minWaitTime = 1;
+    private float maxWaitTime = 5;
+    private float minWaitTime = 1;
 
     private float waitingTime = 0;
 
@@ -18,19 +18,25 @@ public class AiBehaviour : MonoBehaviour
     private Vector3[] heatmap;
     private float totalWeights = 0;
 
+    private GameObject danceFloor;
+
     private float speed;
     private float maxDistanceToGoal;
 
     public bool canMove = true;
+    public bool dancing = false;
 
 
-    public void s_AiBehaviour(Vector3[] heatmapToUse, float totalWeightsToUse, float speedToUse, float maxDistanceToGoalToUse, Vector2 pos)
+    public void s_AiBehaviour(Vector3[] heatmapToUse, float totalWeightsToUse, float speedToUse, float maxDistanceToGoalToUse, Vector2 pos, GameObject danceFloor1, float waitingTimeMin, float waitingTimeMax)
     {
         heatmap = heatmapToUse;
         totalWeights = totalWeightsToUse;
         speed = speedToUse;
         maxDistanceToGoal = maxDistanceToGoalToUse;
         transform.position = pos;
+        danceFloor = danceFloor1;
+        minWaitTime = waitingTimeMin;
+        maxWaitTime = waitingTimeMax;
     }
 
     // Start is called before the first frame update
@@ -53,9 +59,12 @@ public class AiBehaviour : MonoBehaviour
                 time += Time.deltaTime;
                 if (time >= waitingTime)
                 {
+                    dancing = false;
                     isMoving = true;
                     destination = getDestination();
                     time = 0;
+                    GetComponent<Animator>().SetBool("isDancing", false);
+                    GetComponent<Animator>().SetBool("isWalking", true);
                 }
             }
         }
@@ -80,7 +89,23 @@ public class AiBehaviour : MonoBehaviour
 
         if (!isMoving)
         {
+            GetComponent<Animator>().SetBool("isWalking", false);
             waitingTime = Random.Range(minWaitTime, maxWaitTime);
+
+            if (waitingTime <= 0)
+            {
+                waitingTime = 0;
+            }
+            Vector2 danceFloorPos = danceFloor.transform.position;
+            Vector2 danceFloorScale = new Vector2(danceFloor.transform.localScale.x, danceFloor.transform.localScale.y);
+
+            if (transform.position.x >= danceFloorPos.x - danceFloorScale.x/2 && transform.position.x <= danceFloorPos.x + danceFloorScale.x/ 2
+                && transform.position.y <= danceFloorPos.y + danceFloorScale.y/ 2 && transform.position.y >= danceFloorPos.y - danceFloorScale.y / 2)
+            {
+                GetComponent<Animator>().SetBool("isDancing", true);
+                dancing = true;
+                waitingTime *= 1.5f;
+            }
         }
     }
 
