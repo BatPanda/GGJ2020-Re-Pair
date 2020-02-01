@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SetupScreen : MonoBehaviour
 {
     public GameSettings gameSettings;
-
+    public int gameScene = 1;
 
     public DetectController[] detectControllers;
     public MusicSelector[] musicSelectors;
@@ -14,6 +14,7 @@ public class SetupScreen : MonoBehaviour
     public GameObject musicSelectionGroup;
 
     private List<int> detectedControllers = new List<int>();
+    private bool[] readyPlayers = new bool[4];
     private int controllersConnected = 0;
 
     // Start is called before the first frame update
@@ -54,9 +55,33 @@ public class SetupScreen : MonoBehaviour
 
         if (detectedControllers.Count > 0)
         {
-            if (Input.GetButtonDown("Fire" + detectedControllers[0]))
+            for (int i = 0; i < detectedControllers.Count; i++)
             {
-                SceneManager.LoadScene(1);
+                if (Input.GetButtonDown("Select" + detectedControllers[i]))
+                {
+                    gameSettings.playerSettings[i].musicSelected = musicSelectors[i].GetCurrentSelection();
+                    readyPlayers[i] = true;
+                }
+                if (Input.GetButtonDown("Cancel" + detectedControllers[i]))
+                {
+                    gameSettings.playerSettings[i].musicSelected = -1;
+                    readyPlayers[i] = false;
+                }
+                if(Input.GetButtonDown("Fire" + detectedControllers[i]) && detectedControllers.Count > 1)
+                {
+                    bool allReady = true;
+                    for (int j = 0; j < detectedControllers.Count; j++)
+                    {
+                        if(!musicSelectors[j].GetReady())
+                        {
+                            allReady = false;
+                        }
+                    }
+                    if(allReady)
+                    {
+                        SceneManager.LoadScene(gameScene);
+                    }
+                }
             }
         }
     }

@@ -5,4 +5,5 @@ using UnityEngine;
 public class MusicSelection : MonoBehaviour
 {
     public int musicIndex;
+    public bool selected = false;
 }
