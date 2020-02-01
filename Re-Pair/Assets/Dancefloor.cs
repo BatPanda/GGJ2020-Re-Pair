@@ -41,10 +41,6 @@ public class Dancefloor : MonoBehaviour
             int playerID = gameSettings.FindPlayerNumberByController(collision.GetComponent<PlayerController>().controllerNumber);
             uiHandler.particles[playerID].SetActive(false);
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
         collision.GetComponent<Animator>().SetBool("isDancing", false);
     }
 }
