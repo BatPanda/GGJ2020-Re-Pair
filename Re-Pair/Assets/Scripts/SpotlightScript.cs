@@ -9,15 +9,31 @@ public class SpotlightScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (collision.GetComponent<SpriteRenderer>())
+            SpriteRenderer[] sprites = collision.GetComponentsInChildren<SpriteRenderer>();
+
+            foreach(SpriteRenderer sprite in sprites)
             {
-                collision.GetComponent<SpriteRenderer>().color = Color.black;
+                if(sprite.gameObject.transform.parent != null)
+                {
+                    sprite.enabled = true;
+                }
             }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == "Player")
+        {
+            SpriteRenderer[] sprites = collision.GetComponentsInChildren<SpriteRenderer>();
+
+            foreach (SpriteRenderer sprite in sprites)
+            {
+                if (sprite.gameObject.transform.parent != null)
+                {
+                    sprite.enabled = false;
+                }
+            }
+        }
     }
 }
