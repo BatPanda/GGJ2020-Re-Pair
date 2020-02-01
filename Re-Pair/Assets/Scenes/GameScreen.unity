@@ -523,7 +523,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 7450803705983361433, guid: 0e38ffd640c781e489fcdfc43f60a6fb,
+  m_Sprite: {fileID: 7450803705983361433, guid: 725b70fe2f3279b4aae1840d842b1e66,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -714,6 +714,17 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3332993860165686810, guid: 245c9dd127560ad498e3984a6f2dc932,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3656166224718958480, guid: 920c02a83528832448d172dd34fde611,
+        type: 3}
+    - target: {fileID: 3332993860165686810, guid: 245c9dd127560ad498e3984a6f2dc932,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3019652239597208577, guid: 245c9dd127560ad498e3984a6f2dc932,
         type: 3}
       propertyPath: m_Radius
@@ -798,7 +809,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 7450803705983361433, guid: 0e38ffd640c781e489fcdfc43f60a6fb,
+  m_Sprite: {fileID: 7450803705983361433, guid: 725b70fe2f3279b4aae1840d842b1e66,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -914,6 +925,17 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3332993860165686810, guid: 245c9dd127560ad498e3984a6f2dc932,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3656166224718958480, guid: 920c02a83528832448d172dd34fde611,
+        type: 3}
+    - target: {fileID: 3332993860165686810, guid: 245c9dd127560ad498e3984a6f2dc932,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3019652239597208577, guid: 245c9dd127560ad498e3984a6f2dc932,
         type: 3}
       propertyPath: m_Radius
@@ -1006,6 +1028,8 @@ GameObject:
   - component: {fileID: 632584796}
   - component: {fileID: 632584795}
   - component: {fileID: 632584797}
+  - component: {fileID: 632584799}
+  - component: {fileID: 632584798}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -1025,6 +1049,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4304c4e56dff77468c4f5862558ed62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  music: {fileID: 632584798}
+  pairingFX: {fileID: 632584799}
   musicPlaying: 0
 --- !u!4 &632584796
 Transform:
@@ -1055,6 +1081,198 @@ MonoBehaviour:
   gameSettings: {fileID: 0}
   playerPrefab:
   - {fileID: 6955464818211160852, guid: ea421704bce48804797c616eec42f3c0, type: 3}
+--- !u!82 &632584798
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632584794}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &632584799
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632584794}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4a8fee37b7383d144877982ca40a5d4e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 1
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &644625573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,11 +1375,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3332993860165686810, guid: 245c9dd127560ad498e3984a6f2dc932,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 245c9dd127560ad498e3984a6f2dc932, type: 3}
@@ -1279,7 +1492,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 7450803705983361433, guid: 0e38ffd640c781e489fcdfc43f60a6fb,
+  m_Sprite: {fileID: 7450803705983361433, guid: 725b70fe2f3279b4aae1840d842b1e66,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2045,7 +2258,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 7450803705983361433, guid: 0e38ffd640c781e489fcdfc43f60a6fb,
+  m_Sprite: {fileID: 7450803705983361433, guid: 725b70fe2f3279b4aae1840d842b1e66,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3202,7 +3415,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2146359886, guid: d86ac683863aec24d940beba53b68cba, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f7577c8fab6994d468a7de6597dd1a74,
+        type: 3}
+    - target: {fileID: 2146359886, guid: d86ac683863aec24d940beba53b68cba, type: 3}
+      propertyPath: m_Size.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146359886, guid: d86ac683863aec24d940beba53b68cba, type: 3}
+      propertyPath: m_Size.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146359886, guid: d86ac683863aec24d940beba53b68cba, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937028367900168438, guid: d86ac683863aec24d940beba53b68cba,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cad865dc0e98f6d43bde05d8dce8ecd5,
+        type: 3}
+    - target: {fileID: 1937028367900168438, guid: d86ac683863aec24d940beba53b68cba,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937028367900168438, guid: d86ac683863aec24d940beba53b68cba,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937028367900168438, guid: d86ac683863aec24d940beba53b68cba,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2146359886, guid: d86ac683863aec24d940beba53b68cba, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d86ac683863aec24d940beba53b68cba, type: 3}
 --- !u!1001 &4566133875431900746
 PrefabInstance:
@@ -3299,6 +3551,17 @@ PrefabInstance:
     - target: {fileID: 3332993860165686810, guid: 245c9dd127560ad498e3984a6f2dc932,
         type: 3}
       propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3332993860165686810, guid: 245c9dd127560ad498e3984a6f2dc932,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3656166224718958480, guid: 920c02a83528832448d172dd34fde611,
+        type: 3}
+    - target: {fileID: 3332993860165686810, guid: 245c9dd127560ad498e3984a6f2dc932,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3019652239597208577, guid: 245c9dd127560ad498e3984a6f2dc932,

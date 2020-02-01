@@ -1,10 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 725b70fe2f3279b4aae1840d842b1e66
-TextureImporter:
-  internalIDToNameTable: []
-=======
-guid: 0e38ffd640c781e489fcdfc43f60a6fb
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -19,7 +14,6 @@ TextureImporter:
   - first:
       213: 4409022293081409372
     second: SpeakerIconSheet_3
->>>>>>> develop
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -54,15 +48,11 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<< HEAD
-  spriteMode: 1
-=======
   spriteMode: 2
->>>>>>> develop
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -92,11 +82,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-  spriteSheet:
-    serializedVersion: 2
-    sprites: []
-=======
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -199,7 +184,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27ceefac6561f26428fede119d371ea4
+      spriteID: e4b724dbb0d70374daab13a63cf245a6
       internalID: 7450803705983361433
       vertices: []
       indices: 
@@ -220,7 +205,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f682a1ac2407543459b22437036a9895
+      spriteID: 6479fc58ff7b1c24b82801af915c1ff3
       internalID: 1962459708841265290
       vertices: []
       indices: 
@@ -241,7 +226,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cae4d120f749ab43a9131f4ac989619
+      spriteID: 525179c40f19d3e4dae290a394f7bc25
       internalID: 4825306429592250389
       vertices: []
       indices: 
@@ -262,13 +247,12 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5dd165ae3d436ec48a84efec2ded9502
+      spriteID: 31bfcba755b793e4e9b6eae0fa0baf01
       internalID: 4409022293081409372
       vertices: []
       indices: 
       edges: []
       weights: []
->>>>>>> develop
     outline: []
     physicsShape: []
     bones: []
