@@ -38,9 +38,9 @@ public class Dancefloor : MonoBehaviour
     {
         if (collision.GetComponent<PlayerController>())
         {
+            collision.GetComponent<Animator>().SetBool("isDancing", false);
             int playerID = gameSettings.FindPlayerNumberByController(collision.GetComponent<PlayerController>().controllerNumber);
             uiHandler.particles[playerID].SetActive(false);
         }
-        collision.GetComponent<Animator>().SetBool("isDancing", false);
     }
 }

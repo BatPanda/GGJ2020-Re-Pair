@@ -10,6 +10,11 @@ public class SpotlightScript : MonoBehaviour
 
     AiBehaviour[] AICharacters;
 
+    private bool startBouncerAnim;
+
+    private Collider2D characterCollider;
+
+
     private void Start()
     {
         gameSettings = FindObjectOfType<GameSettings>();
@@ -17,9 +22,35 @@ public class SpotlightScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && FindObjectOfType<ChooseCharacterScript>().GetCharacterUsing() != -1)
+        if ((collision.gameObject.tag == "Player" || collision.gameObject.tag == "AI") && FindObjectOfType<ChooseCharacterScript>().GetCharacterUsing() != -1)
         {
             collision.GetComponent<SpriteRenderer>().color = gameSettings.playerSettings[FindObjectOfType<ChooseCharacterScript>().GetCharacterUsing()].playerColor;
+
+            if (Input.GetButtonDown("Select" + GameObject.FindObjectOfType<ChooseCharacterScript>().playerControlling))
+            {
+                characterCollider = collision;
+                startBouncerAnim = true;
+            }
+        }
+
+        if(collision.gameObject.tag == "AI")
+        {
+            collision.GetComponent<SpriteRenderer>().color = gameSettings.playerSettings[FindObjectOfType<ChooseCharacterScript>().GetCharacterUsing()].playerColor;
+
+            if (Input.GetButtonDown("Select" + GameObject.FindObjectOfType<ChooseCharacterScript>().playerControlling))
+            {
+                characterCollider = collision;
+                startBouncerAnim = true;
+            }
+        }
+
+    }
+
+    private void Update()
+    {
+        if(startBouncerAnim)
+        {
+            CheckCharacter(characterCollider);
         }
     }
 
@@ -50,6 +81,21 @@ public class SpotlightScript : MonoBehaviour
         foreach(AiBehaviour ai in AICharacters)
         {
             ai.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+    }
+
+    private void CheckCharacter(Collider2D collision)
+    {
+
+        if (collision.tag == "AI")
+        {
+            Debug.Log("AI");
+
+            GameObject.FindObjectOfType<Bouncer>().UpdateBouncer(collision);
+        }
+        else if(collision.tag == "Player")
+        {
+            Debug.Log("Player");
         }
     }
 }

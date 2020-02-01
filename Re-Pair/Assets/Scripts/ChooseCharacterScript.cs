@@ -23,6 +23,8 @@ public class ChooseCharacterScript : MonoBehaviour
     public float freezeTime = 0;
     public float startFreezeTime = 10;
 
+    public int playerControlling = -1;
+
     private Vector3 originalSpotlightPos;
 
     private void Start()
@@ -36,8 +38,10 @@ public class ChooseCharacterScript : MonoBehaviour
     {
         for(int i = 1; i < 7; i++)
         {
-            if(Input.GetAxis("Fire" + i) > 0 && !timeIsStopped)
+            if(Input.GetButtonDown("Fire" + i) && !timeIsStopped)
             {
+                playerControlling = i;
+
                 timeIsStopped = true;
                 for(int j = 0; j<4; j++)
                 {
@@ -100,6 +104,14 @@ public class ChooseCharacterScript : MonoBehaviour
         {
             player.GetComponent<Animator>().enabled = canMove;
             player.canMove = canMove;
+        }
+
+        AiBehaviour[] aiCharacters = FindObjectsOfType<AiBehaviour>();
+
+        foreach (AiBehaviour ai in aiCharacters)
+        {
+            ai.GetComponent<Animator>().enabled = canMove;
+            ai.canMove = canMove;
         }
     }
 
