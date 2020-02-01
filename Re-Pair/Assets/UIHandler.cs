@@ -48,24 +48,42 @@ public class UIHandler : MonoBehaviour
         }
 
         float totalScore = 0;
-        int winningPlayer = 0;
+        updateOutline();
 
         for (int i = 0; i < players.Length; i++)
         {
             totalScore += players[i].score;
             scores[i].GetComponentInChildren<Text>().text = players[i].score.ToString();
-
-            if (players[winningPlayer].score < players[i].score)
-            {
-                scores[winningPlayer].GetComponentInChildren<Outline>().effectColor = new Color(0, 0, 0, 0);
-                winningPlayer = i;
-                scores[winningPlayer].GetComponentInChildren<Outline>().effectColor = new Color(0, 0, 0, 1);
-            }
         }
 
         for (int i = 0; i < players.Length; i++)
         {
             scores[i].value = players[i].score / totalScore;
+        }
+    }
+
+    void updateOutline()
+    {
+        int winningPlayer = 0;
+
+        for (int i = 0; i < players.Length; i++)
+        {
+            if (players[winningPlayer].score < players[i].score)
+            {
+                winningPlayer = i;
+            }
+        }
+
+        for (int i = 0; i < players.Length; i++)
+        {
+            if (i == winningPlayer)
+            {
+                scores[i].GetComponentInChildren<Outline>().effectColor = new Color(0, 0, 0, 1);
+            }
+            else
+            {
+                scores[i].GetComponentInChildren<Outline>().effectColor = new Color(0, 0, 0, 0);
+            }
         }
     }
 }

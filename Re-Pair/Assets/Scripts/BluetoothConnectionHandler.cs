@@ -6,10 +6,10 @@ public class BluetoothConnectionHandler : MonoBehaviour
 {
     MusicManager musicManager;
 
-    GameObject playerConnecting;
+    public GameObject playerConnecting;
     bool playerInRange = false;
 
-    float connectionTimeDelay = 5f;
+    float connectionTimeDelay = 3f;
     float connectionTimer = 0;
 
     private void Awake()

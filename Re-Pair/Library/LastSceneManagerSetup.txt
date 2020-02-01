@@ -1,13 +1,5 @@
 sceneSetups:
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-- path: Assets/Scenes/TestControllersScene.unity
-=======
-- path: Assets/Scenes/MusicSelect.unity
->>>>>>> controller-setup
-=======
 - path: Assets/Scenes/GameScreen.unity
->>>>>>> Stashed changes
   isLoaded: 1
   isActive: 1
   isSubScene: 0
