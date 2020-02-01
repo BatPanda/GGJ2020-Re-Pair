@@ -8,6 +8,7 @@ public class ScoreUIHandler : MonoBehaviour
 
     public Slider[] scores;
     public Animator[] animators;
+    public GameObject[] particles;
 
     PlayerController[] players;
     MusicManager musicManager;
@@ -28,12 +29,14 @@ public class ScoreUIHandler : MonoBehaviour
             scores[i].gameObject.SetActive(false);
 
             animators[i].gameObject.SetActive(false);
+            particles[i].gameObject.SetActive(false);
         }
 
         for (int i = 0; i < players.Length; i++)
         {
             scores[i].gameObject.SetActive(true);
             animators[i].gameObject.SetActive(true);
+            particles[i].gameObject.SetActive(true);
         }
     }
 
@@ -87,6 +90,30 @@ public class ScoreUIHandler : MonoBehaviour
     public void IncreaseScore(int player, int increase)
     {
         players[player].score += increase;
+
+        for (int i = 0; i < players.Length; i++)
+        {
+            if (i == player)
+            {
+                particles[i].SetActive(true);
+                Vector3 position = particles[i].transform.position;
+
+                if (i == 0 || i == 2)
+                {
+                    position.x = scores[i].transform.position.x - 3.75f + (scores[i].value * 4);
+                }
+                else
+                {
+                    position.x = scores[i].transform.position.x - (scores[i].value * 4);
+                }
+                
+                particles[i].transform.position = position;
+            }
+            else
+            {
+                particles[i].SetActive(false);
+            }
+        }
     }
 
     void updateMusicPlayingUI()

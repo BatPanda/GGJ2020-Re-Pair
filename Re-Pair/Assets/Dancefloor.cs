@@ -25,7 +25,21 @@ public class Dancefloor : MonoBehaviour
             {
                 int score = Mathf.FloorToInt((3 - Vector2.Distance(transform.position, collision.transform.position))*5);
                 uiHandler.IncreaseScore(playerID, score);
+                uiHandler.particles[playerID].SetActive(true);
             }
+            else
+            {
+                uiHandler.particles[playerID].SetActive(false);
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.GetComponent<PlayerController>())
+        {
+            int playerID = gameSettings.FindPlayerNumberByController(collision.GetComponent<PlayerController>().controllerNumber);
+            uiHandler.particles[playerID].SetActive(false);
         }
     }
 
