@@ -1,10 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 guid: 3ea2139eb5d34444ea083311954ecef4
-TextureImporter:
-  internalIDToNameTable: []
-=======
-guid: 81eb20281515437428f4f1602f5d656b
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -13,10 +8,6 @@ TextureImporter:
   - first:
       213: 7846330305454774320
     second: SpeakerSheet_1
-  - first:
-      213: 7561545929589552578
-    second: SpeakerSheet_2
->>>>>>> Stashed changes
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -46,24 +37,16 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< Updated upstream
-    filterMode: -1
-=======
     filterMode: 0
->>>>>>> Stashed changes
     aniso: -1
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<< Updated upstream
-  spriteMode: 1
-=======
   spriteMode: 2
->>>>>>> Stashed changes
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -93,11 +76,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< Updated upstream
-  spriteSheet:
-    serializedVersion: 2
-    sprites: []
-=======
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -191,27 +169,6 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed5006e51b63c6a4d9e5d6740dfe43b2
-      internalID: -3656166224718958480
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpeakerSheet_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
         width: 16
         height: 28
       alignment: 0
@@ -221,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11b80b34c57fe674889db1506f19881f
-      internalID: 7846330305454774320
+      spriteID: 71825ea81baac9e409a909b172eec007
+      internalID: -3656166224718958480
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpeakerSheet_2
+      name: SpeakerSheet_1
       rect:
         serializedVersion: 2
         x: 16
@@ -242,17 +199,16 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75deb87142ab10a4dad4c59877ecfde2
-      internalID: 7561545929589552578
+      spriteID: 2c60601cc317d19498a0fc75f3b033cd
+      internalID: 7846330305454774320
       vertices: []
       indices: 
       edges: []
       weights: []
->>>>>>> Stashed changes
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 305d0a9f6e69df94e9fbdde4167e6170
     internalID: 0
     vertices: []
     indices: 
