@@ -33,13 +33,14 @@ public class PlayerController : MonoBehaviour
         float moveHorizontal = Input.GetAxisRaw("Horizontal" + controllerNumber);
         float moveVertical = Input.GetAxisRaw("Vertical" +  controllerNumber);
 
+        Debug.Log(moveHorizontal);
         if(canMove)
         {
             transform.position += new Vector3(movementSpeed * moveHorizontal, movementSpeed * moveVertical, 0) * Time.deltaTime;
         }
 
         //handles animation between walking and idle.
-        if(moveVertical > 0 || moveHorizontal > 0)
+        if(moveVertical != 0 || moveHorizontal != 0)
         {
             anim.SetBool("isWalking", true);
         }

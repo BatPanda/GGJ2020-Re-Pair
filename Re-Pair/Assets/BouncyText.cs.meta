@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Re-Pair/Assets/BouncyText.cs.meta
 guid: 9d5395d97c8812049bec3170e6719287
 MonoImporter:
+=======
+guid: a0234538ce1f2ce4282c8552a797164a
+folderAsset: yes
+DefaultImporter:
+>>>>>>> develop:Re-Pair/Assets/Materials.meta
   externalObjects: {}
   serializedVersion: 2
   defaultReferences: []
