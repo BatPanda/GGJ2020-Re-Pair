@@ -91,6 +91,7 @@ public class ChooseCharacterScript : MonoBehaviour
 
         foreach(PlayerController player in players)
         {
+            player.GetComponent<Animator>().enabled = canMove;
             player.canMove = canMove;
         }
     }

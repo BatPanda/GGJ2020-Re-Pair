@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SetupScreen : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class SetupScreen : MonoBehaviour
         for(int i = 0; i<musicSelections.Length; i++)
         {
             musicSelections[i].musicIndex = i;
+            musicSelections[i].GetComponentInChildren<Text>().text = (i + 1).ToString();
         }
 
         foreach(MusicSelector musicSelector in musicSelectors)

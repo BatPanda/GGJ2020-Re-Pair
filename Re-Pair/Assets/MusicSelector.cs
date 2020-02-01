@@ -11,6 +11,8 @@ public class MusicSelector : MonoBehaviour
     private int controllerNumber;
     private float inputDelay = 0f;
 
+    public Color playerColor;
+
     public MusicSelection[] musicSelections;
     private int currentSelection;
 
@@ -45,7 +47,8 @@ public class MusicSelector : MonoBehaviour
                 {
                     musicSelected = true;
                     musicSelections[currentSelection].selected = true;
-                    GetComponent<Image>().enabled = true;
+                    musicSelections[currentSelection].GetComponent<Image>().enabled = true;
+                    musicSelections[currentSelection].GetComponent<Image>().color = playerColor;
                 }
             }
             else
@@ -54,7 +57,7 @@ public class MusicSelector : MonoBehaviour
                 {
                     musicSelected = false;
                     musicSelections[currentSelection].selected = false;
-                    GetComponent<Image>().enabled = false;
+                    musicSelections[currentSelection].GetComponent<Image>().enabled = false;
                 }
             }
         }

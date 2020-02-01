@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //handles animation between walking and idle.
-        if(moveVertical > 0 || moveHorizontal > 0)
+        if(moveVertical != 0 || moveHorizontal != 0)
         {
             anim.SetBool("isWalking", true);
         }

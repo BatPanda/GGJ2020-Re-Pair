@@ -53,6 +53,75 @@ TextureImporter:
   - first:
       213: -6409175465109363212
     second: TriangleWomanPurpleSheet_16
+  - first:
+      213: 6840271103491232817
+    second: TriangleWomanPurpleSheet_17
+  - first:
+      213: 5432245011522308157
+    second: TriangleWomanPurpleSheet_18
+  - first:
+      213: 817919789213091407
+    second: TriangleWomanPurpleSheet_19
+  - first:
+      213: -3157785066372700692
+    second: TriangleWomanPurpleSheet_20
+  - first:
+      213: -8520100885948475707
+    second: TriangleWomanPurpleSheet_21
+  - first:
+      213: -145459884857505574
+    second: TriangleWomanPurpleSheet_22
+  - first:
+      213: 9154372264554277833
+    second: TriangleWomanPurpleSheet_23
+  - first:
+      213: 7211518217893631266
+    second: TriangleWomanPurpleSheet_24
+  - first:
+      213: 6362182983726287921
+    second: TriangleWomanPurpleSheet_25
+  - first:
+      213: 8478379615912078407
+    second: TriangleWomanPurpleSheet_26
+  - first:
+      213: -9142111643466310917
+    second: TriangleWomanPurpleSheet_27
+  - first:
+      213: -3387522826203907512
+    second: TriangleWomanPurpleSheet_28
+  - first:
+      213: 8632745913613534289
+    second: TriangleWomanPurpleSheet_29
+  - first:
+      213: 1160065407868455381
+    second: TriangleWomanPurpleSheet_30
+  - first:
+      213: -2280167489458990727
+    second: TriangleWomanPurpleSheet_31
+  - first:
+      213: 3450994157368757060
+    second: TriangleWomanPurpleSheet_32
+  - first:
+      213: -3415796046362398672
+    second: TriangleWomanPurpleSheet_33
+  - first:
+      213: -3619869059698190670
+    second: TriangleWomanPurpleSheet_34
+  - first:
+      213: -1711862933420538756
+    second: TriangleWomanPurpleSheet_35
+  - first:
+      213: 238840720580866362
+    second: TriangleWomanPurpleSheet_36
+  - first:
+      213: -5619571348186413201
+    second: TriangleWomanPurpleSheet_37
+  - first:
+      213: 6849874719451516402
+    second: TriangleWomanPurpleSheet_38
+  - first:
+      213: 7683532549068032424
+    second: TriangleWomanPurpleSheet_39
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -214,8 +283,8 @@ TextureImporter:
         serializedVersion: 2
         x: 1
         y: 0
-        width: 16
-        height: 22
+        width: 18
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,7 +292,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f57bed1b16616c6458efb2170086dda3
+      spriteID: dd3903cb402704b4d98d0d375d54f251
       internalID: -361100375878273689
       vertices: []
       indices: 
@@ -233,10 +302,10 @@ TextureImporter:
       name: TriangleWomanPurpleSheet_1
       rect:
         serializedVersion: 2
-        x: 19
+        x: 21
         y: 0
-        width: 16
-        height: 22
+        width: 18
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,7 +313,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b67ceb8a825a2194a8c147dac6086217
+      spriteID: 5f07070a15de53f4fbc9a35137a438d9
       internalID: -4587353936926545935
       vertices: []
       indices: 
@@ -254,10 +323,10 @@ TextureImporter:
       name: TriangleWomanPurpleSheet_2
       rect:
         serializedVersion: 2
-        x: 37
+        x: 41
         y: 0
-        width: 16
-        height: 22
+        width: 18
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,7 +334,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46577b2bbe562d84194444098ba27791
+      spriteID: 667ab4997a0ccd743affcccc793705f9
       internalID: -2112678997473526757
       vertices: []
       indices: 
@@ -275,10 +344,10 @@ TextureImporter:
       name: TriangleWomanPurpleSheet_3
       rect:
         serializedVersion: 2
-        x: 55
+        x: 61
         y: 0
-        width: 16
-        height: 22
+        width: 18
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,7 +355,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 249f2bdd1a9410b4392f4e3be66ca8d3
+      spriteID: 1c6af645843b59e4c999c97460617a37
       internalID: -8570957465045501380
       vertices: []
       indices: 
@@ -296,10 +365,10 @@ TextureImporter:
       name: TriangleWomanPurpleSheet_4
       rect:
         serializedVersion: 2
-        x: 73
+        x: 81
         y: 0
-        width: 16
-        height: 22
+        width: 18
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,7 +376,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 518ef4e573b09ed49905eaf4c979bbb8
+      spriteID: b838c639c73302e4eb761e1742163697
       internalID: 6358965814801051924
       vertices: []
       indices: 
@@ -317,10 +386,10 @@ TextureImporter:
       name: TriangleWomanPurpleSheet_5
       rect:
         serializedVersion: 2
-        x: 90
+        x: 100
         y: 0
-        width: 16
-        height: 22
+        width: 18
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,7 +397,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42ef956e638108541b248a8e9c20b229
+      spriteID: aa77e528d2ff0744691f6017b56cf65d
       internalID: 8022444238850242789
       vertices: []
       indices: 
@@ -338,10 +407,10 @@ TextureImporter:
       name: TriangleWomanPurpleSheet_6
       rect:
         serializedVersion: 2
-        x: 109
+        x: 121
         y: 0
-        width: 16
-        height: 22
+        width: 18
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,7 +418,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0509553035bcbc04682d3b7aba648c72
+      spriteID: a673f11c4e872704fbca9c382b294fb2
       internalID: -8647614769470773289
       vertices: []
       indices: 
@@ -359,10 +428,10 @@ TextureImporter:
       name: TriangleWomanPurpleSheet_7
       rect:
         serializedVersion: 2
-        x: 128
+        x: 142
         y: 0
-        width: 16
-        height: 22
+        width: 18
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,7 +439,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65f0bf34dfa3b1348820ed073e62de35
+      spriteID: 1b83523a89fd357498607910eae42e55
       internalID: -4438010127197310594
       vertices: []
       indices: 
@@ -380,10 +449,10 @@ TextureImporter:
       name: TriangleWomanPurpleSheet_8
       rect:
         serializedVersion: 2
-        x: 145
+        x: 161
         y: 0
-        width: 16
-        height: 22
+        width: 18
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -391,7 +460,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c5afaa4f978f4946a17ec077ddefb09
+      spriteID: 71bd6d9b1273e4c499b1b791f12f6ed7
       internalID: 2993616541643326424
       vertices: []
       indices: 
@@ -401,10 +470,10 @@ TextureImporter:
       name: TriangleWomanPurpleSheet_9
       rect:
         serializedVersion: 2
-        x: 163
+        x: 181
         y: 0
-        width: 16
-        height: 21
+        width: 18
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -412,7 +481,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be57d1877b32c62409a60df43ecd9f03
+      spriteID: a83c1c5e24996784bbe8e1216c841646
       internalID: -1623304135861145665
       vertices: []
       indices: 
@@ -422,10 +491,10 @@ TextureImporter:
       name: TriangleWomanPurpleSheet_10
       rect:
         serializedVersion: 2
-        x: 181
+        x: 201
         y: 0
-        width: 16
-        height: 22
+        width: 18
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -433,7 +502,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7eeb480dea6d4d545b4b9e44ec707259
+      spriteID: 4dc8f158454f2aa4ab222dfa40ffdfc6
       internalID: 1588042586484760354
       vertices: []
       indices: 
@@ -443,10 +512,10 @@ TextureImporter:
       name: TriangleWomanPurpleSheet_11
       rect:
         serializedVersion: 2
-        x: 200
+        x: 222
         y: 0
-        width: 15
-        height: 23
+        width: 17
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -454,7 +523,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2307eadc237e25d45bb892c3903e2bdf
+      spriteID: d76cc20e59175354e82b0208d773c10a
       internalID: 3273821849815608804
       vertices: []
       indices: 
@@ -464,10 +533,10 @@ TextureImporter:
       name: TriangleWomanPurpleSheet_12
       rect:
         serializedVersion: 2
-        x: 217
+        x: 241
         y: 0
-        width: 16
-        height: 22
+        width: 18
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -475,7 +544,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c7c78f1ae6803046bfe301837c3e8d2
+      spriteID: 87135b5bd9c0e5f40ac7ab13ae7dbdad
       internalID: -231673778920441733
       vertices: []
       indices: 
@@ -485,10 +554,10 @@ TextureImporter:
       name: TriangleWomanPurpleSheet_13
       rect:
         serializedVersion: 2
-        x: 234
+        x: 260
         y: 0
-        width: 16
-        height: 23
+        width: 18
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -496,7 +565,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b1114fb83e66884fa091a946906ddbd
+      spriteID: 7972d7c05ef9789489cdc854934c6aa2
       internalID: -1271104225657105814
       vertices: []
       indices: 
@@ -506,10 +575,10 @@ TextureImporter:
       name: TriangleWomanPurpleSheet_14
       rect:
         serializedVersion: 2
-        x: 253
+        x: 281
         y: 0
-        width: 16
-        height: 22
+        width: 18
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -517,7 +586,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34c1eac512b839e4db82521337fe4f16
+      spriteID: 3b0aec585ab1412439a082a8e78b5366
       internalID: 7372184759326647704
       vertices: []
       indices: 
@@ -527,10 +596,10 @@ TextureImporter:
       name: TriangleWomanPurpleSheet_15
       rect:
         serializedVersion: 2
-        x: 271
+        x: 301
         y: 0
-        width: 16
-        height: 21
+        width: 18
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -538,7 +607,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 631c8927c2618904ea95d1e9321cbce5
+      spriteID: 952aa6ae5220a2f4cb5d398f02b319db
       internalID: 7371726836813470276
       vertices: []
       indices: 
@@ -548,8 +617,92 @@ TextureImporter:
       name: TriangleWomanPurpleSheet_16
       rect:
         serializedVersion: 2
-        x: 289
+        x: 321
         y: 0
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c215c8495139af44af9f30e1ec6b117
+      internalID: -6409175465109363212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_17
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 0
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca65bd243c21ef479454fee1dd3f6f3
+      internalID: 6840271103491232817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_18
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 0
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8358ad59897f4644854d439429c001f
+      internalID: 5432245011522308157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_19
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 0
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 080571236ecc54e4287c30c28178d4bc
+      internalID: 817919789213091407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_20
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1
         width: 16
         height: 22
       alignment: 0
@@ -559,8 +712,407 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a268316fe1b4f224d9c8dbb405644526
-      internalID: -6409175465109363212
+      spriteID: c0fc1bf9078f9e04b83698a619f7b0a2
+      internalID: -3157785066372700692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_21
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 1
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3537d4edb46b07d45b875a1850f1dc29
+      internalID: -8520100885948475707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_22
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 1
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9318953f226a354bb07f10417b4cb8e
+      internalID: -145459884857505574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_23
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 1
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdfea51b67ea3f546869ee35e4bd5e44
+      internalID: 9154372264554277833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_24
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 1
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd6957cb6b441648a664d9e4335095c
+      internalID: 7211518217893631266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_25
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 1
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c65aeec9c6e42fd438fdefde7550336a
+      internalID: 6362182983726287921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_26
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 1
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de64fcbed66110c489f3f43b69847a47
+      internalID: 8478379615912078407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_27
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 1
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 067586307c8b00d40bbdf5fb41d6cb12
+      internalID: -9142111643466310917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_28
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 1
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fd2a657321ff044f8134056e30fd5fc
+      internalID: -3387522826203907512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_29
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 1
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 166f9668e6ec4514e967484c2cf7652a
+      internalID: 8632745913613534289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_30
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 1
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b1a793f58625bd44b7073124e5feda9
+      internalID: 1160065407868455381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_31
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f5b4a3233057f54a8c22c0f30d7bd3b
+      internalID: -2280167489458990727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_32
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 1
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36bdae42d1a40de4580340bd1d375733
+      internalID: 3450994157368757060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_33
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 1
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6924bf7aab4bb4992eacc51f644c2c
+      internalID: -3415796046362398672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_34
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 1
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc26480f6ba20147a4eff2f8e6877ca
+      internalID: -3619869059698190670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_35
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 1
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57bc57e27ee725c4d872a0d395c12bcc
+      internalID: -1711862933420538756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_36
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 1
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97eb49e896f676242ad5fa5fd9fcecb5
+      internalID: 238840720580866362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_37
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 1
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2867c8540e5bae140beb1b01f13968e5
+      internalID: -5619571348186413201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_38
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 1
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24180b4fbe64c9644ae16049deea262b
+      internalID: 6849874719451516402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleWomanPurpleSheet_39
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 1
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c668ea280dfcda54784b047aea3535f1
+      internalID: 7683532549068032424
       vertices: []
       indices: 
       edges: []
