@@ -1346,6 +1346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSettings: {fileID: 0}
+  gameScene: 1
   detectControllers:
   - {fileID: 1664807551}
   - {fileID: 584425083}
