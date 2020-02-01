@@ -19,7 +19,7 @@ public class SetupGame : MonoBehaviour
         {
             if(gameSettings.playerSettings[i].connected)
             {
-                Instantiate(playerPrefab).GetComponent<playerController>().controllerNum = gameSettings.playerSettings[i].playerNum;
+                Instantiate(playerPrefab).GetComponent<PlayerController>().controllerNumber = gameSettings.playerSettings[i].playerNum;
             }
         }
     }
