@@ -43,16 +43,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cd700fbf788b243b9bb1415ae63122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AiPrefab: {fileID: 2660335615389497420, guid: 6fae52efb9ed6d044acea17f6a64e873,
-    type: 3}
-  nbOfAis: 5
+  AiPrefab:
+  - {fileID: 2660335615389497420, guid: 6fae52efb9ed6d044acea17f6a64e873, type: 3}
+  - {fileID: 5543894008025475722, guid: ca78c44fd09dda145a76e65bcfd69dda, type: 3}
+  - {fileID: 3022596881466864540, guid: 7b58ec9cb7b217845aa8375475617e86, type: 3}
+  - {fileID: 3870077875613178364, guid: b09ca61a1fe3ed7448d51d4338d9343f, type: 3}
+  - {fileID: 3037064124861535124, guid: 6bf741773a6748e4180344d337c231c5, type: 3}
+  nbOfAis: 50
   speakers:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   danceFloor: {fileID: 0}
+  danceFloorAvoidRadius: 5
+  speakersAvoidRadius: 3
+  avoidanceForce: 1
+  number_box_for_one: 5
   screenStartPos: {x: -10, y: -5}
   screenEndPos: {x: 10, y: 5}
-  speed: 2
+  lowestspeed: 2
+  highestspeed: 5
   maxDistanceToGoal: 0.05
+  minWaitingTime: -1
+  maxWaitingTime: 7

@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class SpawnAis : MonoBehaviour
 {
+
+
     private Vector3[] heatmap;
     private float totalWeights = 0;
 
-    public GameObject AiPrefab;
+
+    public GameObject[] AiPrefab;
 
     public int nbOfAis;
     
@@ -88,9 +91,12 @@ public class SpawnAis : MonoBehaviour
         
         for (int i = 0; i < nbOfAis; i++)
         {
+            int getMyHumanSkin = Random.Range(0, AiPrefab.Length);
+
             Vector2 position = new Vector2(Random.Range(screenStartPos.x, screenEndPos.x), Random.Range(screenStartPos.y, screenEndPos.y));
-            GameObject go = Instantiate(AiPrefab, position, Quaternion.identity);
+            GameObject go = Instantiate(AiPrefab[getMyHumanSkin], position, Quaternion.identity);
             go.AddComponent<AiBehaviour>().s_AiBehaviour(heatmap, totalWeights, lowestspeed, highestspeed, maxDistanceToGoal, position, danceFloor, minWaitingTime, maxWaitingTime, screenSize.magnitude);
+            
         }
         
     }
