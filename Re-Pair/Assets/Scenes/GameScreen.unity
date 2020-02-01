@@ -523,7 +523,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 7450803705983361433, guid: 0e38ffd640c781e489fcdfc43f60a6fb,
+  m_Sprite: {fileID: 7450803705983361433, guid: 725b70fe2f3279b4aae1840d842b1e66,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -714,6 +714,17 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3332993860165686810, guid: 245c9dd127560ad498e3984a6f2dc932,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3656166224718958480, guid: 920c02a83528832448d172dd34fde611,
+        type: 3}
+    - target: {fileID: 3332993860165686810, guid: 245c9dd127560ad498e3984a6f2dc932,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3019652239597208577, guid: 245c9dd127560ad498e3984a6f2dc932,
         type: 3}
       propertyPath: m_Radius
@@ -798,7 +809,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 7450803705983361433, guid: 0e38ffd640c781e489fcdfc43f60a6fb,
+  m_Sprite: {fileID: 7450803705983361433, guid: 725b70fe2f3279b4aae1840d842b1e66,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -912,6 +923,17 @@ PrefabInstance:
     - target: {fileID: 3332993860165686810, guid: 245c9dd127560ad498e3984a6f2dc932,
         type: 3}
       propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3332993860165686810, guid: 245c9dd127560ad498e3984a6f2dc932,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3656166224718958480, guid: 920c02a83528832448d172dd34fde611,
+        type: 3}
+    - target: {fileID: 3332993860165686810, guid: 245c9dd127560ad498e3984a6f2dc932,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3019652239597208577, guid: 245c9dd127560ad498e3984a6f2dc932,
@@ -1158,11 +1180,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3332993860165686810, guid: 245c9dd127560ad498e3984a6f2dc932,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 245c9dd127560ad498e3984a6f2dc932, type: 3}
 --- !u!1 &751640305
@@ -1279,7 +1296,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 7450803705983361433, guid: 0e38ffd640c781e489fcdfc43f60a6fb,
+  m_Sprite: {fileID: 7450803705983361433, guid: 725b70fe2f3279b4aae1840d842b1e66,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2045,7 +2062,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 7450803705983361433, guid: 0e38ffd640c781e489fcdfc43f60a6fb,
+  m_Sprite: {fileID: 7450803705983361433, guid: 725b70fe2f3279b4aae1840d842b1e66,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3202,7 +3219,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2146359886, guid: d86ac683863aec24d940beba53b68cba, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f7577c8fab6994d468a7de6597dd1a74,
+        type: 3}
+    - target: {fileID: 2146359886, guid: d86ac683863aec24d940beba53b68cba, type: 3}
+      propertyPath: m_Size.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146359886, guid: d86ac683863aec24d940beba53b68cba, type: 3}
+      propertyPath: m_Size.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146359886, guid: d86ac683863aec24d940beba53b68cba, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937028367900168438, guid: d86ac683863aec24d940beba53b68cba,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cad865dc0e98f6d43bde05d8dce8ecd5,
+        type: 3}
+    - target: {fileID: 1937028367900168438, guid: d86ac683863aec24d940beba53b68cba,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937028367900168438, guid: d86ac683863aec24d940beba53b68cba,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937028367900168438, guid: d86ac683863aec24d940beba53b68cba,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2146359886, guid: d86ac683863aec24d940beba53b68cba, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d86ac683863aec24d940beba53b68cba, type: 3}
 --- !u!1001 &4566133875431900746
 PrefabInstance:
@@ -3299,6 +3355,17 @@ PrefabInstance:
     - target: {fileID: 3332993860165686810, guid: 245c9dd127560ad498e3984a6f2dc932,
         type: 3}
       propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3332993860165686810, guid: 245c9dd127560ad498e3984a6f2dc932,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3656166224718958480, guid: 920c02a83528832448d172dd34fde611,
+        type: 3}
+    - target: {fileID: 3332993860165686810, guid: 245c9dd127560ad498e3984a6f2dc932,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3019652239597208577, guid: 245c9dd127560ad498e3984a6f2dc932,
