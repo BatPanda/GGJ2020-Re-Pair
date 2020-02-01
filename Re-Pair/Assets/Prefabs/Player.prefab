@@ -53,7 +53,7 @@ Rigidbody2D:
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!58 &1793501131
@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 4
   controllerNumber: 1
+  score: 0
 --- !u!1 &8785782022563487417
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,25 +28,6 @@ public class UIHandler : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.A))
-        {
-            players[0].score += 10;
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            players[1].score += 10;
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            players[2].score += 10;
-        }
-        if (Input.GetKey(KeyCode.F))
-        {
-            players[3].score += 10;
-        }
-
         float totalScore = 0;
         updateOutline();
 
@@ -73,9 +54,9 @@ public class UIHandler : MonoBehaviour
                 winningPlayer = i;
             }
         }
-
-        for (int i = 0; i < players.Length; i++)
+        if (totalScore > 0)
         {
+<<<<<<< Updated upstream
             if (i == winningPlayer)
             {
                 scores[i].GetComponentInChildren<Outline>().effectColor = new Color(0, 0, 0, 1);
@@ -83,7 +64,17 @@ public class UIHandler : MonoBehaviour
             else
             {
                 scores[i].GetComponentInChildren<Outline>().effectColor = new Color(0, 0, 0, 0);
+=======
+            for (int i = 0; i < players.Length; i++)
+            {
+                scores[i].value = players[i].score / totalScore;
+>>>>>>> Stashed changes
             }
         }
+    }
+
+    public void IncreaseScore(int player, int increase)
+    {
+        players[player].score += increase;
     }
 }

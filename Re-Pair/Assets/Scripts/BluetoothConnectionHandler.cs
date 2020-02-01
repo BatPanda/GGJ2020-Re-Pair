@@ -6,6 +6,9 @@ public class BluetoothConnectionHandler : MonoBehaviour
 {
     MusicManager musicManager;
 
+
+    GameSettings gameSettings;
+
     public GameObject playerConnecting;
     bool playerInRange = false;
 
@@ -15,6 +18,7 @@ public class BluetoothConnectionHandler : MonoBehaviour
     private void Awake()
     {
         musicManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<MusicManager>();
+        gameSettings = FindObjectOfType<GameSettings>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,7 +47,7 @@ public class BluetoothConnectionHandler : MonoBehaviour
 
             if (connectionTimer >= connectionTimeDelay)
             {
-                musicManager.ChangeMusic(playerConnecting.GetComponent<PlayerController>().controllerNumber);
+                musicManager.ChangeMusic(gameSettings.FindPlayerNumberByController(playerConnecting.GetComponent<PlayerController>().controllerNumber));
                 connectionTimer = 0;
                 playerConnecting = null;
                 playerInRange = false;
