@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MusicSelect.unity
     guid: 6702cae5d7c5d644f9bbbb44b6c034ff
   - enabled: 1
-    path: Assets/Scenes/GameScreen - Copy.unity
-    guid: d3df159573732914c91e880d24e49916
+    path: Assets/Scenes/GameScreen.unity
+    guid: 7f7536c78e4d2534cbcda920330e3bcf
   m_configObjects: {}
