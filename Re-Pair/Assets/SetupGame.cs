@@ -12,7 +12,6 @@ public class SetupGame : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log(gameSettings.playerSettings.Length);
 
         if(!gameSettings)
         {
