@@ -43,7 +43,7 @@ public class BluetoothConnectionHandler : MonoBehaviour
 
             if (connectionTimer >= connectionTimeDelay)
             {
-                musicManager.ChangeMusic(playerConnecting.GetComponent<PlayerController>().getPlayerNumber());
+                //musicManager.ChangeMusic(playerConnecting.GetComponent<PlayerController>().controllerNumber);
                 connectionTimer = 0;
                 playerConnecting = null;
                 playerInRange = false;
