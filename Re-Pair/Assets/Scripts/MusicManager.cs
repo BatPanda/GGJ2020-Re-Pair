@@ -4,31 +4,19 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
+    private GameSettings gameSettings;
+
+    [SerializeField]
     int musicPlaying;
+
+    private void Awake()
+    {
+        gameSettings = FindObjectOfType<GameSettings>();
+    }
 
     public void ChangeMusic(int playerNumber)
     {
-        Debug.Log("Changing Music to: " + playerNumber);
-        if (playerNumber == 1)
-        {
-            // Play Player One Music
-            musicPlaying = playerNumber;
-        }
-        else if (playerNumber == 2)
-        {
-            // Play Player Two Music
-            musicPlaying = playerNumber;
-        }
-        else if (playerNumber == 3)
-        {
-            // Play Player Three Music
-            musicPlaying = playerNumber;
-        }
-        else if (playerNumber == 4)
-        {
-            // Play Player our Music
-            musicPlaying = playerNumber;
-        }
+        musicPlaying = gameSettings.playerSettings[playerNumber].musicSelected;
     }
 
     public int MusicPlaying()
