@@ -1051,7 +1051,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music: {fileID: 632584798}
   pairingFX: {fileID: 632584799}
-  musicPlaying: 0
+  loadAudio: []
+  musicPlaying: -1
 --- !u!4 &632584796
 Transform:
   m_ObjectHideFlags: 0
@@ -1093,7 +1094,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
