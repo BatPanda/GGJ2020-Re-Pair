@@ -26,11 +26,14 @@ public class ScoreUIHandler : MonoBehaviour
             scores[i].value = 0;
             scores[i].GetComponentInChildren<Outline>().effectColor = new Color(0, 0, 0, 0);
             scores[i].gameObject.SetActive(false);
+
+            animators[i].gameObject.SetActive(false);
         }
 
         for (int i = 0; i < players.Length; i++)
         {
             scores[i].gameObject.SetActive(true);
+            animators[i].gameObject.SetActive(true);
         }
     }
 
