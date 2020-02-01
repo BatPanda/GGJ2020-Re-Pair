@@ -48,7 +48,7 @@ public class ChooseCharacterScript : MonoBehaviour
                     }
                 }
 
-                CharactersCanMove(true);
+                CharactersCanMove(false);
                 break;
             }
 
@@ -105,7 +105,7 @@ public class ChooseCharacterScript : MonoBehaviour
         {
             spotlight.SetActive(false);
             spotlight.transform.position = originalSpotlightPos;
-            CharactersCanMove(false);
+            CharactersCanMove(true);
             timeIsStopped = false;
             freezeTime = startFreezeTime + Time.time;
         }
