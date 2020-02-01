@@ -9,11 +9,13 @@ public class PlayerController : MonoBehaviour
 
     public int controllerNumber;
 
-    private Animator anim;
+    public float score = 0;
+
+    //private Animator anim;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
     }
 
 
@@ -31,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
         transform.position += new Vector3(movementSpeed * moveHorizontal, movementSpeed * moveVertical, 0) * Time.deltaTime;
 
-        //handles animation between walking and idle.
+        /*handles animation between walking and idle.
         if(moveVertical > 0 || moveHorizontal > 0)
         {
             anim.SetBool("isWalking", true);
@@ -40,6 +42,6 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("isWalking", false);
         }
-
+        */
     }
 }
