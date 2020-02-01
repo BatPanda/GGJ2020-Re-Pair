@@ -18,49 +18,45 @@ public class AiBehaviour : MonoBehaviour
     private Vector3[] heatmap;
     private float totalWeights = 0;
 
+    private float speed;
+    private float maxDistanceToGoal;
 
-    public float maxDistanceToMove;
-    public Vector2 screenStratPos;
-    public Vector2 screenEndPos;
-    public float speed;
-    public float maxDistanceToGoal;
+    public bool canMove = true;
+
+
+    public void s_AiBehaviour(Vector3[] heatmapToUse, float totalWeightsToUse, float speedToUse, float maxDistanceToGoalToUse, Vector2 pos)
+    {
+        heatmap = heatmapToUse;
+        totalWeights = totalWeightsToUse;
+        speed = speedToUse;
+        maxDistanceToGoal = maxDistanceToGoalToUse;
+        transform.position = pos;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        heatmap = new Vector3[100];
-
-        for(int i = 0; i < 100; i++)
-        {
-            heatmap[i].x = i % 10 - 5;
-            heatmap[i].y = (i - i % 10) / 10 - 5;
-
-
-            Vector2 weight = new Vector2(heatmap[i].x, heatmap[i].y);
-            weight -= new Vector2(0, 0);
-
-            // The weight of the heatmap is set here
-            heatmap[i].z = ((weight.magnitude) + 5) / 10;
-            totalWeights += heatmap[i].z;
-        }
-
+        waitingTime = Random.Range(minWaitTime, maxWaitTime);
     }
 
     private void FixedUpdate()
     {
-       if (isMoving)
+        if (canMove)
         {
-           moveAi();
-           checkIfStop();
-        }
-        else
-        {
-            time += Time.deltaTime;
-            if (time >= waitingTime)
+            if (isMoving)
             {
-                isMoving = true;
-                destination = getDestination();
-                time = 0;
+                moveAi();
+                checkIfStop();
+            }
+            else
+            {
+                time += Time.deltaTime;
+                if (time >= waitingTime)
+                {
+                    isMoving = true;
+                    destination = getDestination();
+                    time = 0;
+                }
             }
         }
     }
@@ -93,7 +89,7 @@ public class AiBehaviour : MonoBehaviour
         float choice = Random.Range(0, totalWeights);
         float x = 0;
 
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < heatmap.Length; i++)
         {
             x += heatmap[i].z;
             if (x >= choice)
@@ -101,6 +97,7 @@ public class AiBehaviour : MonoBehaviour
                 return new Vector2(heatmap[i].x, heatmap[i].y);
             }
         }
-       return new Vector2(Random.Range(screenStratPos.x, screenEndPos.x), Random.Range(screenStratPos.y, screenEndPos.y));
+        Debug.LogError(x);
+       return new Vector2(0, 0);
     }
 }
