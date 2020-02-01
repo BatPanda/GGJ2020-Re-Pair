@@ -35,4 +35,16 @@ public class GameSettings : MonoBehaviour
     {
 
     }
+
+    public int FindPlayerNumberByController(int controller)
+    {
+        for(int i = 0; i < playerSettings.Length; i++)
+        { 
+            if(playerSettings[i].playerNum == controller)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
