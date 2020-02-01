@@ -7,11 +7,12 @@ public class GameSettings : MonoBehaviour
     [System.Serializable]
     public struct PlayerSettings
     {
-        [HideInInspector]
         public int playerNum;
 
         public bool connected;
         public int musicSelected;
+
+        public Color playerColor;
     }
     public PlayerSettings[] playerSettings = new PlayerSettings[4];
 
@@ -24,10 +25,6 @@ public class GameSettings : MonoBehaviour
         else
         {
             DontDestroyOnLoad(gameObject);
-        }
-        for (int i = 0; i<playerSettings.Length; i++)
-        {
-            playerSettings[i].playerNum = i;
         }
     }
 

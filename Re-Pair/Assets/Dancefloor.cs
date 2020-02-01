@@ -19,6 +19,7 @@ public class Dancefloor : MonoBehaviour
     {
         if (collision.GetComponent<PlayerController>())
         {
+            collision.GetComponent<Animator>().SetBool("isDancing", true);
             int playerID = gameSettings.FindPlayerNumberByController(collision.GetComponent<PlayerController>().controllerNumber);
             if ( gameSettings.playerSettings[playerID].musicSelected == musicManager.MusicPlaying())
             {
@@ -26,5 +27,10 @@ public class Dancefloor : MonoBehaviour
                 uiHandler.IncreaseScore(playerID, score);
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        collision.GetComponent<Animator>().SetBool("isDancing", false);
     }
 }

@@ -9,6 +9,8 @@ public class MusicManager : MonoBehaviour
     public AudioSource pairingFX;
 
 
+    public GameObject danceFloorSprite;
+
     [SerializeField]
     int musicPlaying;
 
@@ -21,6 +23,9 @@ public class MusicManager : MonoBehaviour
     {
         pairingFX.Play();
         musicPlaying = gameSettings.playerSettings[playerNumber].musicSelected;
+
+        SpriteRenderer danceFloorRenderer = danceFloorSprite.GetComponent<SpriteRenderer>();
+        danceFloorRenderer.color = gameSettings.playerSettings[playerNumber].playerColor;
     }
 
     public int MusicPlaying()

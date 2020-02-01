@@ -2968,18 +2968,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSettings:
-  - playerNum: 1
+  - playerNum: 0
     connected: 0
     musicSelected: -1
-  - playerNum: 2
+    playerColor: {r: 1, g: 0.3647059, b: 0.3647059, a: 1}
+  - playerNum: 0
     connected: 0
     musicSelected: -1
-  - playerNum: 3
+    playerColor: {r: 0.4392157, g: 1, b: 0.3647059, a: 1}
+  - playerNum: 0
     connected: 0
     musicSelected: -1
-  - playerNum: 4
+    playerColor: {r: 0.3647059, g: 0.9607843, b: 1, a: 1}
+  - playerNum: 0
     connected: 0
     musicSelected: -1
+    playerColor: {r: 1, g: 0.91764706, b: 0.3647059, a: 1}
 --- !u!4 &1264981397
 Transform:
   m_ObjectHideFlags: 0
