@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    AudioClip player_one_music;
-    AudioClip player_two_music;
-    AudioClip player_three_music;
-    AudioClip player_four_music;
-
     int musicPlaying;
 
     public void ChangeMusic(int playerNumber)
