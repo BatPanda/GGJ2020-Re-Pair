@@ -46,6 +46,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
     width: 1920
     height: 947
 <<<<<<< Updated upstream
@@ -59,6 +60,14 @@ MonoBehaviour:
   vertical: 0
   controlID: 54
 >>>>>>> Stashed changes
+=======
+    width: 1904
+    height: 931
+  m_MinSize: {x: 683, y: 494}
+  m_MaxSize: {x: 14004, y: 14044}
+  vertical: 0
+  controlID: 125
+>>>>>>> develop
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -76,6 +85,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1531
     y: 0
+<<<<<<< HEAD
     width: 389
     height: 947
 <<<<<<< Updated upstream
@@ -86,6 +96,13 @@ MonoBehaviour:
   m_MaxSize: {x: 4002, y: 4022}
 >>>>>>> Stashed changes
   m_ActualView: {fileID: 14}
+=======
+    width: 386
+    height: 931
+  m_MinSize: {x: 277, y: 72}
+  m_MaxSize: {x: 4002, y: 4022}
+  m_ActualView: {fileID: 15}
+>>>>>>> develop
   m_Panes:
   - {fileID: 14}
   m_Selected: 0
@@ -107,11 +124,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 379
-    height: 573
+    width: 376
+    height: 563
   m_MinSize: {x: 202, y: 222}
   m_MaxSize: {x: 4002, y: 4022}
-  m_ActualView: {fileID: 15}
+  m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 15}
   m_Selected: 0
@@ -233,12 +250,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1531
-    height: 947
+    width: 1518
+    height: 931
   m_MinSize: {x: 406, y: 494}
   m_MaxSize: {x: 10002, y: 14044}
   vertical: 1
-  controlID: 55
+  controlID: 57
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -258,12 +275,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1531
-    height: 573
+    width: 1518
+    height: 563
   m_MinSize: {x: 406, y: 222}
   m_MaxSize: {x: 8006, y: 4022}
   vertical: 0
-  controlID: 56
+  controlID: 58
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -281,6 +298,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 379
     y: 0
+<<<<<<< HEAD
     width: 1152
     height: 573
 <<<<<<< Updated upstream
@@ -292,6 +310,13 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
 >>>>>>> Stashed changes
+=======
+    width: 1142
+    height: 563
+  m_MinSize: {x: 204, y: 222}
+  m_MaxSize: {x: 4004, y: 4022}
+  m_ActualView: {fileID: 18}
+>>>>>>> develop
   m_Panes:
   - {fileID: 16}
   - {fileID: 17}
@@ -379,6 +404,7 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     m_SelectedIDs: 96350000
     m_LastClickedID: 13718
@@ -388,6 +414,11 @@ MonoBehaviour:
     m_LastClickedID: 14282
     m_ExpandedIDs: 0000000024340000d234000020350000a83600004c39000000ca9a3b
 >>>>>>> Stashed changes
+=======
+    m_SelectedIDs: 1e340000
+    m_LastClickedID: 13342
+    m_ExpandedIDs: 00000000f82e0000ac2f0000fc2f000096320000bc3500002036000000ca9a3b
+>>>>>>> develop
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -415,11 +446,15 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     m_ExpandedIDs: 000000007c3000002c3100007c310000183400002a3700008e370000
 =======
     m_ExpandedIDs: 0000000024340000d234000020350000a83600004c390000
 >>>>>>> Stashed changes
+=======
+    m_ExpandedIDs: 00000000f82e0000ac2f0000fc2f000096320000bc35000020360000
+>>>>>>> develop
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -540,6 +575,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       m_SelectedIDs: 46450000
       m_LastClickedID: 17734
@@ -549,6 +585,11 @@ MonoBehaviour:
       m_LastClickedID: 0
       m_ExpandedIDs: 9cebfcffa4eefcffc2eefcffae22fdff7851fdff127afdfffeedfeff26eefeff783affff3a42ffffa842ffff6a4effff4853ffff727affff5e92ffff7a92ffff9cafffff7ac3ffffbad3ffff26eeffff6af0ffff9c7c0000ea7c00002e7d0000787d00007c7d0000a28d0000ac8d00000c8e00001e8e00003a8e0000
 >>>>>>> Stashed changes
+=======
+      m_SelectedIDs: a6310000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 927fffffae88fffff6c5ffffd2dbffff16fbffff
+>>>>>>> develop
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: Speaker Bottom Right
