@@ -9,7 +9,7 @@ public class SetupScreen : MonoBehaviour
     public GameSettings gameSettings;
     public int gameScene = 2;
 
-    public float countdownTime = 10f;
+    public float countdownTime = 20f;
     public Text countdownText;
     public GameObject instructionsText;
     public GameObject tutorialUI;
@@ -98,7 +98,7 @@ public class SetupScreen : MonoBehaviour
     {
         float timer = 0f;
         float soundTime = 1f;
-        int secsLeft = 10;
+        float secsLeft = countdownTime;
 
         countdownText.enabled = true;
         instructionsText.SetActive(false);
