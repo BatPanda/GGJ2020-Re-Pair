@@ -23,7 +23,7 @@ public class GameTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(timeElapsed >= gameTimeSeconds && gamePlaying)
+        if(timeElapsed >= gameTimeSeconds && gamePlaying && !FindObjectOfType<ChooseCharacterScript>().timeIsStopped)
         {
             gamePlaying = false;
             GameObject[] Ais = GameObject.FindGameObjectsWithTag("AI");
