@@ -7,6 +7,9 @@ public class MusicManager : MonoBehaviour
     private GameSettings gameSettings;
     public AudioSource music;
     public AudioSource pairingFX;
+    public AudioSource yarrr;
+
+    public Sprite piratehat;
 
     [SerializeField]
     private List<AudioClip> loadAudio;
@@ -55,6 +58,37 @@ public class MusicManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene(0);
+        }
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            for (int i = 0; i < loadAudio.Count; i++)
+            {
+                if (i != loadAudio.Count - 1)
+                {
+                    loadAudio[i] = Resources.Load<AudioClip>("Pirate/PIRATE" + (i+1));
+                }
+                else
+                {
+                    loadAudio[i] = Resources.Load<AudioClip>("Pirate/PIRATE5");
+                }
+            }
+
+            foreach(PlayerController playerController in FindObjectsOfType<PlayerController>())
+            {
+                GameObject playerPirateHat = Instantiate(new GameObject(), playerController.transform);
+                playerPirateHat.AddComponent<SpriteRenderer>().sprite = piratehat;
+                playerPirateHat.transform.localPosition = new Vector3(0, 0.38f, -1f);
+            }
+            foreach (AiBehaviour aiController in FindObjectsOfType<AiBehaviour>())
+            {
+                GameObject playerPirateHat = Instantiate(new GameObject(), aiController.transform);
+                playerPirateHat.AddComponent<SpriteRenderer>().sprite = piratehat;
+                playerPirateHat.transform.localPosition = new Vector3(0, 0.38f, -3f);
+            }
+
+            yarrr.Play();
+            music.clip = loadAudio[musicPlaying == -1 ? loadAudio.Count-1 : musicPlaying];
+            music.Play();
         }
     }
 
