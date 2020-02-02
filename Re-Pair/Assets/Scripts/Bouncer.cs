@@ -8,9 +8,14 @@ public class Bouncer : MonoBehaviour
 
     private Vector2 startPos;
     private GameObject target;
+    private GameObject[] spawning;
 
     private bool charging = false;
     private bool returning = false;
+
+    private bool caughtPlayer = false;
+    private const float playerSpawnTime = 10;
+    private float timer = 0;
 
     public float moveSpeed = 0.1f;
 
@@ -50,9 +55,57 @@ public class Bouncer : MonoBehaviour
                 target.GetComponent<Renderer>().enabled = false;
                 charging = false;
                 returning = true;
-                target = null;
+
+                //spawning = target;
+                //target = null;
+                caughtPlayer = true;
+                timer = 0;
+                //Debug.LogError(spawnNb);
             }
         }
+
+        if (caughtPlayer)
+        {
+            Debug.LogError("got Here1");
+            GameObject[] Ais = GameObject.FindGameObjectsWithTag("AI");
+            
+
+            timer += Time.deltaTime;
+            if (timer >= playerSpawnTime)
+             {
+                Debug.LogError("got Here2");
+                int randomAi = Random.Range(0, Ais.Length);
+                Vector2 newPlayerPosition = Ais[randomAi].transform.position;
+
+                FindObjectOfType<GameSettings>().playerSettings[
+                            FindObjectOfType<GameSettings>().FindPlayerNumberByController
+                                (
+                                target.GetComponent<PlayerController>().controllerNumber
+                                )
+                            ].alive = true;
+                target.GetComponent<PlayerController>().enabled = true;
+                target.GetComponent<Collider2D>().enabled = true;
+                target.GetComponent<Renderer>().enabled = true;
+
+                target.transform.position = newPlayerPosition;
+
+                target.GetComponent<Animator>().runtimeAnimatorController = Ais[randomAi].GetComponent<Animator>().runtimeAnimatorController;
+
+
+
+
+
+                Destroy(Ais[randomAi]);
+
+                target = null;
+
+                caughtPlayer = false;
+                timer = 0;
+            }
+
+        }
+            
+        
     }
 
     public void StartBouncer(Collider2D collision)
