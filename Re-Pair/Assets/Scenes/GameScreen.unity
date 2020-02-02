@@ -1829,6 +1829,8 @@ MonoBehaviour:
   endGameTimer: 10
   panicTime: 30
   gameTimer: {fileID: 552905634}
+  winParticleEffect: {fileID: 4657743799487248253, guid: 04e8938f8678d7040846f882ad274d3b,
+    type: 3}
 --- !u!82 &632584801
 AudioSource:
   m_ObjectHideFlags: 0

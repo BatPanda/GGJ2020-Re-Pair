@@ -25,6 +25,10 @@ public class ChooseCharacterScript : MonoBehaviour
 
     public int playerControlling = -1;
 
+    public float refreshTime = 4f;
+
+    private float refreshTimer = 0f;
+
     private Vector3 originalSpotlightPos;
 
     private void Start()
@@ -36,13 +40,21 @@ public class ChooseCharacterScript : MonoBehaviour
 
     void Update()
     {
+        if(!timeIsStopped && refreshTimer > 0f)
+        {
+            refreshTimer -= Time.deltaTime;
+        }
+        
+
         for(int i = 1; i < 7; i++)
         {
-            if(Input.GetButtonDown("Fire" + i) && !timeIsStopped && gameSettings.playerSettings[gameSettings.FindPlayerNumberByController(i)].alive)
+            if(Input.GetButtonDown("Fire" + i) && !timeIsStopped && gameSettings.playerSettings[gameSettings.FindPlayerNumberByController(i)].alive
+                && refreshTimer <= 0f)
             {
                 playerControlling = i;
 
                 timeIsStopped = true;
+                refreshTimer = refreshTime;
                 for(int j = 0; j<4; j++)
                 {
                     if(FindObjectOfType<GameSettings>().playerSettings[j].playerNum == i)
