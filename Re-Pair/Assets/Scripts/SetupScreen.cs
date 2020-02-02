@@ -7,15 +7,18 @@ using UnityEngine.UI;
 public class SetupScreen : MonoBehaviour
 {
     public GameSettings gameSettings;
-    public int gameScene = 1;
+    public int gameScene = 2;
 
-    public float countdownTime = 3f;
+    public float countdownTime = 10f;
     public Text countdownText;
+    public GameObject instructionsText;
+    public GameObject tutorialUI;
 
     public DetectController[] detectControllers;
     public MusicSelector[] musicSelectors;
 
     public GameObject musicSelectionGroup;
+    public GameObject selectTrackText;
 
     private List<int> detectedControllers = new List<int>();
     private bool[] readyPlayers = new bool[4];
@@ -95,11 +98,16 @@ public class SetupScreen : MonoBehaviour
     {
         float timer = 0f;
         float soundTime = 1f;
-        int secsLeft = 4;
+        int secsLeft = 10;
 
         countdownText.enabled = true;
+        instructionsText.SetActive(false);
+        musicSelectionGroup.SetActive(false);
+        selectTrackText.SetActive(false);
 
-        while(timer < countdownTime)
+        tutorialUI.SetActive(true);
+
+        while (timer < countdownTime)
         {
             if (soundTime >= 1f)
             {
@@ -112,7 +120,7 @@ public class SetupScreen : MonoBehaviour
             soundTime += Time.deltaTime;
             yield return 0;
         }
-
+        Destroy(Camera.main.gameObject);
         SceneManager.LoadScene(gameScene);
     }
 }

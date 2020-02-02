@@ -15,7 +15,7 @@ public class GameTimer : MonoBehaviour
     int panicState = 0;
 
     public Text gameTimer;
-    public Text playerWinsText;
+    public GameObject winParticleEffect;
 
     public GameObject[] Scores;
 
@@ -34,7 +34,7 @@ public class GameTimer : MonoBehaviour
 
     void Update()
     {
-        if(timeElapsed >= gameTimeSeconds && gamePlaying)
+        if(timeElapsed >= gameTimeSeconds && gamePlaying && !FindObjectOfType<ChooseCharacterScript>().timeIsStopped)
         {
             gamePlaying = false;
             GameObject[] Ais = GameObject.FindGameObjectsWithTag("AI");
@@ -133,17 +133,25 @@ public class GameTimer : MonoBehaviour
                 }
             }
         }
+
+        bool spawnedParticles = false;
         while (timer < endGameTimer)
         {
             if (winner)
             {
-                winner.transform.position = Vector2.MoveTowards(winner.transform.position, new Vector2(0, 0), Time.deltaTime * 5f);
+                winner.transform.position = Vector2.MoveTowards(winner.transform.position, new Vector2(0, 0), Time.deltaTime * 2f);
+
+                if(winner.transform.position == new Vector3(0, 0, winner.transform.position.z) && !spawnedParticles)
+                {
+                    Instantiate(winParticleEffect, new Vector3(0, -5, 0), Quaternion.identity);
+                    spawnedParticles = true;
+                }
             }
             timer += Time.deltaTime;
             yield return 0;
         }
 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         yield break;
     }
 

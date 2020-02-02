@@ -20,22 +20,22 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 9020467833970305057, guid: 33dc7583dca49264bbf533ae60cb6b4b,
+      value: {fileID: 9020467833970305057, guid: 5b6b7dff070328442863c5a361030caa,
         type: 3}
     - time: 0.05
-      value: {fileID: 6763652689221702387, guid: 33dc7583dca49264bbf533ae60cb6b4b,
+      value: {fileID: 6763652689221702387, guid: 5b6b7dff070328442863c5a361030caa,
         type: 3}
     - time: 0.1
-      value: {fileID: -1773800508304675732, guid: 33dc7583dca49264bbf533ae60cb6b4b,
+      value: {fileID: -1773800508304675732, guid: 5b6b7dff070328442863c5a361030caa,
         type: 3}
     - time: 0.15
-      value: {fileID: -6516530919724431135, guid: 33dc7583dca49264bbf533ae60cb6b4b,
+      value: {fileID: -6516530919724431135, guid: 5b6b7dff070328442863c5a361030caa,
         type: 3}
     - time: 0.2
-      value: {fileID: 8425250215640195065, guid: 33dc7583dca49264bbf533ae60cb6b4b,
+      value: {fileID: 8425250215640195065, guid: 5b6b7dff070328442863c5a361030caa,
         type: 3}
     - time: 0.25
-      value: {fileID: 8713396305446735671, guid: 33dc7583dca49264bbf533ae60cb6b4b,
+      value: {fileID: 8713396305446735671, guid: 5b6b7dff070328442863c5a361030caa,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -56,12 +56,12 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 9020467833970305057, guid: 33dc7583dca49264bbf533ae60cb6b4b, type: 3}
-    - {fileID: 6763652689221702387, guid: 33dc7583dca49264bbf533ae60cb6b4b, type: 3}
-    - {fileID: -1773800508304675732, guid: 33dc7583dca49264bbf533ae60cb6b4b, type: 3}
-    - {fileID: -6516530919724431135, guid: 33dc7583dca49264bbf533ae60cb6b4b, type: 3}
-    - {fileID: 8425250215640195065, guid: 33dc7583dca49264bbf533ae60cb6b4b, type: 3}
-    - {fileID: 8713396305446735671, guid: 33dc7583dca49264bbf533ae60cb6b4b, type: 3}
+    - {fileID: 9020467833970305057, guid: 5b6b7dff070328442863c5a361030caa, type: 3}
+    - {fileID: 6763652689221702387, guid: 5b6b7dff070328442863c5a361030caa, type: 3}
+    - {fileID: -1773800508304675732, guid: 5b6b7dff070328442863c5a361030caa, type: 3}
+    - {fileID: -6516530919724431135, guid: 5b6b7dff070328442863c5a361030caa, type: 3}
+    - {fileID: 8425250215640195065, guid: 5b6b7dff070328442863c5a361030caa, type: 3}
+    - {fileID: 8713396305446735671, guid: 5b6b7dff070328442863c5a361030caa, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -86,4 +86,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.2
+    functionName: spawnDoorParticles
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

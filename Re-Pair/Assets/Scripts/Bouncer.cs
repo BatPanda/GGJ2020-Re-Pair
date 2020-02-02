@@ -21,6 +21,8 @@ public class Bouncer : MonoBehaviour
 
     public float playerCarryPosition = -0.05f;
 
+    private bool shutDoor = false;
+
     private void Start()
     {
         startPos = transform.position;
@@ -36,12 +38,10 @@ public class Bouncer : MonoBehaviour
             {
                 returning = false;
 
-                foreach (Transform child in transform)
+                if (!shutDoor)
                 {
-                    if(child.GetComponent<SpriteRenderer>())
-                    {
-                        child.GetComponent<SpriteRenderer>().enabled = false;
-                    }
+                    door.GetComponent<Animator>().SetTrigger("shutDoor");
+                    shutDoor = true;
                 }
             }
         }
@@ -148,6 +148,17 @@ public class Bouncer : MonoBehaviour
 
     public void StartBouncer(Collider2D collision)
     {
+        //ensures character has no sprite when returning to scene.
+        foreach (Transform child in transform)
+        {
+            if (child.GetComponent<SpriteRenderer>())
+            {
+                child.GetComponent<SpriteRenderer>().enabled = false;
+                child.parent = null;
+            }
+        }
+
+        shutDoor = false;
         door.GetComponent<Animator>().SetTrigger("openDoor");
 
         targetNb = 0;
