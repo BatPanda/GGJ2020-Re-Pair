@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 262823680136984317}
   - component: {fileID: 5817637382585707325}
   - component: {fileID: 6498232991110726077}
+  - component: {fileID: 1773843239}
   m_Layer: 0
   m_Name: Bouncer
   m_TagString: Untagged
@@ -101,3 +102,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1773843239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7747540098436819945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9388afe5effd7c14b81364f6ccc2c2ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 0}
+  moveSpeed: 4
+  playerCarryPosition: -0.05
