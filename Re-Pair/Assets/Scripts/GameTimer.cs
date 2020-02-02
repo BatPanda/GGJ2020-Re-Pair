@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameTimer : MonoBehaviour
 {
-    public float gameTimeSeconds = 60*4;
+    public float gameTimeSeconds = 10*4;
     public float endGameTimer = 10f;
     public float panicTime = 30f;
 
@@ -23,6 +23,11 @@ public class GameTimer : MonoBehaviour
         if(timeElapsed >= gameTimeSeconds && gamePlaying)
         {
             gamePlaying = false;
+            GameObject[] Ais = GameObject.FindGameObjectsWithTag("AI");
+            for (int i = 0; i < Ais.Length; i++)
+            {
+                Ais[i].GetComponent<AiBehaviour>().leaveScreen = true;
+            }
             StartCoroutine(EndGame());
         }
         else

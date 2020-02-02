@@ -33,6 +33,8 @@ public class AiBehaviour : MonoBehaviour
 
     public bool canMove = true;
 
+    public bool leaveScreen = false;
+
 
     public void s_AiBehaviour(Vector3[] heatmapToUse, float totalWeightsToUse, float lowestSpeed, float highestSpeed, float maxDistanceToGoalToUse, Vector2 pos, GameObject danceFloor1, float waitingTimeMin, float waitingTimeMax, float longestDistance)
     {
@@ -60,11 +62,25 @@ public class AiBehaviour : MonoBehaviour
         {
             if (isMoving)
             {
-                moveAi();
-                checkIfStop();
+                if (leaveScreen)
+                {
+                    leaveScreenMovement();
+                }
+                else
+                {
+                    moveAi();
+                    checkIfStop();
+                }
             }
             else
             {
+                if (leaveScreen)
+                {
+                    if (waitingTime - time >= 5)
+                    {
+                        time = waitingTime - 4.9f;
+                    }
+                }
                 time += Time.deltaTime;
                 if (time >= waitingTime)
                 {
@@ -199,23 +215,19 @@ public class AiBehaviour : MonoBehaviour
             }
             return new Vector2(lowside.x, lowside.y);
         }
-        /*
-        else if (positionOfHit.y == highside.y)
-        {
-            if (a < 0)
-            {
-                return new Vector2(lowside.x, highside.y);
-            }
-            return new Vector2(highside.x, highside.y);
-        }
-        else
-        {
-            if (a < 0)
-            {
-                return new Vector2(lowside.x, lowside.y);
-            }
-            return new Vector2(highside.x, lowside.y);
-        }*/
     }
+
+    public void leaveScreenMovement()
+    {
+        Vector2 newPosition = transform.position;
+        Vector2 toADD = new Vector2(danceFloor.transform.position.x, danceFloor.transform.position.y) - newPosition;
+        toADD.Normalize();
+
+        toADD *= -1;
+
+        newPosition += toADD * speed * 1.2f * Time.deltaTime;
+        transform.position = newPosition;
+    }
+
 }
 
