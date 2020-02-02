@@ -15,6 +15,7 @@ public class GameTimer : MonoBehaviour
     int panicState = 0;
 
     public Text gameTimer;
+    public GameObject winParticleEffect;
 
     private bool gamePlaying = true;
     private float timeElapsed = 0f;
@@ -101,11 +102,19 @@ public class GameTimer : MonoBehaviour
                 }
             }
         }
+
+        bool spawnedParticles = false;
         while (timer < endGameTimer)
         {
             if (winner)
             {
-                winner.transform.position = Vector2.MoveTowards(winner.transform.position, new Vector2(0, 0), Time.deltaTime * 5f);
+                winner.transform.position = Vector2.MoveTowards(winner.transform.position, new Vector2(0, 0), Time.deltaTime * 2f);
+
+                if(winner.transform.position == new Vector3(0, 0, winner.transform.position.z) && !spawnedParticles)
+                {
+                    Instantiate(winParticleEffect, new Vector3(0, -5, 0), Quaternion.identity);
+                    spawnedParticles = true;
+                }
             }
             timer += Time.deltaTime;
             yield return 0;

@@ -15,6 +15,7 @@ public class MusicManager : MonoBehaviour
     private List<AudioClip> loadAudio;
 
     public GameObject danceFloorSprite;
+    public GameObject[] speakers;
 
     [SerializeField]
     int musicPlaying;
@@ -106,6 +107,14 @@ public class MusicManager : MonoBehaviour
                 pairingFX.Play();
                 musicPlaying = gameSettings.playerSettings[playerNumber].musicSelected;
                 danceFloorRenderer.color = gameSettings.playerSettings[playerNumber].playerColor;
+
+                for (int i = 0; i < speakers.Length; i++)
+                {
+                    ParticleSystem speakersRenderer = speakers[i].GetComponent<ParticleSystem>();
+                    var main = speakersRenderer.main;
+                    main.startColor = gameSettings.playerSettings[playerNumber].playerColor;
+                }
+
                 music.clip = loadAudio[playerNumber];
             }
             music.Stop();
