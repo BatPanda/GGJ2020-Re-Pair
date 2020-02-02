@@ -44,10 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AiPrefab:
-  - {fileID: 2660335615389497420, guid: 6fae52efb9ed6d044acea17f6a64e873, type: 3}
+  - {fileID: 5543894008025475722, guid: d2a4dbe8f49b48e4e95ef63ce1a9e4f1, type: 3}
   - {fileID: 5543894008025475722, guid: ca78c44fd09dda145a76e65bcfd69dda, type: 3}
+  - {fileID: 3022596881466864540, guid: b0de0c96018065642aa90fe2a8250480, type: 3}
   - {fileID: 3022596881466864540, guid: 7b58ec9cb7b217845aa8375475617e86, type: 3}
+  - {fileID: 3870077875613178364, guid: b010ad66452d1ee4c88147f81adb71d4, type: 3}
   - {fileID: 3870077875613178364, guid: b09ca61a1fe3ed7448d51d4338d9343f, type: 3}
+  - {fileID: 2660335615389497420, guid: ce05b273be3816b438f33e39ec321d9a, type: 3}
+  - {fileID: 2660335615389497420, guid: 6fae52efb9ed6d044acea17f6a64e873, type: 3}
+  - {fileID: 3037064124861535124, guid: 0264b4e61522cee478bca92ef7d5c912, type: 3}
   - {fileID: 3037064124861535124, guid: 6bf741773a6748e4180344d337c231c5, type: 3}
   nbOfAis: 50
   speakers:
