@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SetupScreen : MonoBehaviour
 {
     public GameSettings gameSettings;
-    public int gameScene = 1;
+    public int gameScene = 2;
 
     public float countdownTime = 10f;
     public Text countdownText;
@@ -120,7 +120,7 @@ public class SetupScreen : MonoBehaviour
             soundTime += Time.deltaTime;
             yield return 0;
         }
-
+        Destroy(Camera.main.gameObject);
         SceneManager.LoadScene(gameScene);
     }
 }

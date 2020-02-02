@@ -120,7 +120,7 @@ public class GameTimer : MonoBehaviour
             yield return 0;
         }
 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         yield break;
     }
 
