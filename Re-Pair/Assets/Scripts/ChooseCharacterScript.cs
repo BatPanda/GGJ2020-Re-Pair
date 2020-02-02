@@ -62,6 +62,15 @@ public class ChooseCharacterScript : MonoBehaviour
             {
                 ManageSpotlightMovement(i, playerUsing);
             }
+
+        }
+
+        if (playerUsing != -1)
+        {
+            if (Input.GetButtonDown("Cancel" + gameSettings.playerSettings[playerUsing].playerNum) && timeIsStopped)
+            {
+                EndFreeze();
+            }
         }
     }
 
