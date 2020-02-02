@@ -38,7 +38,7 @@ public class ChooseCharacterScript : MonoBehaviour
     {
         for(int i = 1; i < 7; i++)
         {
-            if(Input.GetButtonDown("Fire" + i) && !timeIsStopped)
+            if(Input.GetButtonDown("Fire" + i) && !timeIsStopped && gameSettings.playerSettings[gameSettings.FindPlayerNumberByController(i)].alive)
             {
                 playerControlling = i;
 
@@ -52,6 +52,9 @@ public class ChooseCharacterScript : MonoBehaviour
                 }
 
                 CharactersCanMove(false);
+
+                spotlight.GetComponent<Renderer>().enabled = true;
+                spotlight.GetComponent<Collider2D>().enabled = true;
                 break;
             }
 
@@ -119,7 +122,7 @@ public class ChooseCharacterScript : MonoBehaviour
     {
         freezeTime += Time.deltaTime;
 
-        if (freezeTime > startFreezeTime)
+        if (freezeTime >= startFreezeTime)
         {
             spotlight.GetComponent<SpotlightScript>().RevertColours();
             spotlight.SetActive(false);
@@ -133,5 +136,10 @@ public class ChooseCharacterScript : MonoBehaviour
     public int GetCharacterUsing()
     {
         return playerUsing;
+    }
+
+    public void EndFreeze()
+    {
+        freezeTime = startFreezeTime;
     }
 }

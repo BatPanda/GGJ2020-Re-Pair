@@ -12,14 +12,14 @@ public class BouncyText : MonoBehaviour
     private Vector2 startPos;
     private void Awake()
     {
-        startPos = transform.position;
+        startPos = transform.localPosition;
     }
 
     private void Update()
     {
         if(bounceTimer >= bounceRate)
         {
-            transform.position = new Vector2(transform.position.x, startPos.y + (up ? 10f : 0f));
+            transform.localPosition = new Vector2(transform.localPosition.x, startPos.y + (up ? 10f : 0f));
             up = !up;
             bounceTimer = 0f;
         }

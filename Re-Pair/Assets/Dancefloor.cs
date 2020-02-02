@@ -19,17 +19,20 @@ public class Dancefloor : MonoBehaviour
     {
         if (collision.GetComponent<PlayerController>())
         {
-            collision.GetComponent<Animator>().SetBool("isDancing", true);
-            int playerID = gameSettings.FindPlayerNumberByController(collision.GetComponent<PlayerController>().controllerNumber);
-            if ( gameSettings.playerSettings[playerID].musicSelected == musicManager.MusicPlaying())
+            if (collision.GetComponent<PlayerController>().canMove)
             {
-                int score = Mathf.FloorToInt((3 - Vector2.Distance(transform.position, collision.transform.position))*5);
-                uiHandler.IncreaseScore(playerID, score);
-                uiHandler.particles[playerID].SetActive(true);
-            }
-            else
-            {
-                uiHandler.particles[playerID].SetActive(false);
+                collision.GetComponent<Animator>().SetBool("isDancing", true);
+                int playerID = gameSettings.FindPlayerNumberByController(collision.GetComponent<PlayerController>().controllerNumber);
+                if (gameSettings.playerSettings[playerID].musicSelected == musicManager.MusicPlaying())
+                {
+                    int score = Mathf.FloorToInt((3 - Vector2.Distance(transform.position, collision.transform.position)) * 5);
+                    uiHandler.IncreaseScore(playerID, score);
+                    uiHandler.particles[playerID].SetActive(true);
+                }
+                else
+                {
+                    uiHandler.particles[playerID].SetActive(false);
+                }
             }
         }
     }

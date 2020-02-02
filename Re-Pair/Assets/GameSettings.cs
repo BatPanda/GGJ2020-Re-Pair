@@ -12,9 +12,12 @@ public class GameSettings : MonoBehaviour
         public bool connected;
         public int musicSelected;
 
+        public bool alive;
+
         public Color playerColor;
     }
     public PlayerSettings[] playerSettings = new PlayerSettings[4];
+
 
     private void Awake()
     {

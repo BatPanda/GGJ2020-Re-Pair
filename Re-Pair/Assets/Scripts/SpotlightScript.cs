@@ -18,13 +18,15 @@ public class SpotlightScript : MonoBehaviour
     private void Start()
     {
         gameSettings = FindObjectOfType<GameSettings>();
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Renderer>().enabled = false;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if ((collision.gameObject.tag == "Player" || collision.gameObject.tag == "AI") && FindObjectOfType<ChooseCharacterScript>().GetCharacterUsing() != -1)
         {
-            collision.GetComponent<SpriteRenderer>().color = gameSettings.playerSettings[FindObjectOfType<ChooseCharacterScript>().GetCharacterUsing()].playerColor;
+            collision.GetComponentInChildren<SpriteRenderer>().color = gameSettings.playerSettings[FindObjectOfType<ChooseCharacterScript>().GetCharacterUsing()].playerColor;
 
             if (Input.GetButtonDown("Select" + GameObject.FindObjectOfType<ChooseCharacterScript>().playerControlling))
             {
@@ -34,7 +36,7 @@ public class SpotlightScript : MonoBehaviour
 
         if(collision.gameObject.tag == "AI")
         {
-            collision.GetComponent<SpriteRenderer>().color = gameSettings.playerSettings[FindObjectOfType<ChooseCharacterScript>().GetCharacterUsing()].playerColor;
+            collision.GetComponentInChildren<SpriteRenderer>().color = gameSettings.playerSettings[FindObjectOfType<ChooseCharacterScript>().GetCharacterUsing()].playerColor;
 
             if (Input.GetButtonDown("Select" + GameObject.FindObjectOfType<ChooseCharacterScript>().playerControlling))
             {
@@ -84,22 +86,26 @@ public class SpotlightScript : MonoBehaviour
     private void CheckCharacter(Collider2D collision)
     {
 
-        if (collision.tag == "AI")
+        if (collision)
         {
-            int playerNum = FindObjectOfType<ChooseCharacterScript>().GetCharacterUsing();
-            foreach (PlayerController player in FindObjectsOfType<PlayerController>())
+            if (collision.tag == "AI")
             {
-                if(player.controllerNumber == gameSettings.playerSettings[playerNum].playerNum)
+                int playerNum = FindObjectOfType<ChooseCharacterScript>().GetCharacterUsing();
+                foreach (PlayerController player in FindObjectsOfType<PlayerController>())
                 {
-                    player.GetComponent<PlayerController>().enabled = false;
-                    player.GetComponent<Collider2D>().enabled = false;
-                    player.GetComponent<Renderer>().enabled = false;
+                    if (player.controllerNumber == gameSettings.playerSettings[playerNum].playerNum)
+                    {
+                        GameObject.FindObjectOfType<Bouncer>().StartBouncer(player.GetComponent<Collider2D>());
+                        characterCollider = null;
+                    }
                 }
             }
-        }
-        else if(collision.tag == "Player")
-        {
-            GameObject.FindObjectOfType<Bouncer>().StartBouncer(collision);
+            else if (collision.tag == "Player")
+            {
+                GameObject.FindObjectOfType<Bouncer>().StartBouncer(collision);
+                characterCollider = null;
+            }
+            FindObjectOfType<ChooseCharacterScript>().EndFreeze();
         }
     }
 }

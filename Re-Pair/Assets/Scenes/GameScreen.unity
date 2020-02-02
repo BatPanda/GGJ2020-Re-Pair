@@ -1581,6 +1581,10 @@ MonoBehaviour:
   gameSettings: {fileID: 0}
   playerPrefab:
   - {fileID: 6955464818211160852, guid: ea421704bce48804797c616eec42f3c0, type: 3}
+  - {fileID: 8217296377983685580, guid: 25b5c2bbe8558dd49bb05be8b4442eb5, type: 3}
+  - {fileID: 2199513001895577125, guid: 17cdf235b81a07d438ac971f2c220909, type: 3}
+  - {fileID: 4185211081586640038, guid: 58104f99c0690314ea96e29b341ef4a3, type: 3}
+  - {fileID: 5057726807083536460, guid: fb04184b90ddd494e9a66e1a553e50f5, type: 3}
 --- !u!82 &632584798
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4541,6 +4545,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 950956957475946398, guid: fba889c2b9ff33c4486c63bdb08198dd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 9020467833970305057, guid: 5b6b7dff070328442863c5a361030caa,
+        type: 3}
+    - target: {fileID: 950956957475946398, guid: fba889c2b9ff33c4486c63bdb08198dd,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 950956957475946398, guid: fba889c2b9ff33c4486c63bdb08198dd,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 950956957475946398, guid: fba889c2b9ff33c4486c63bdb08198dd,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fba889c2b9ff33c4486c63bdb08198dd, type: 3}

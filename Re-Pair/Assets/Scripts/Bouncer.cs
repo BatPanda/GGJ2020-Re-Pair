@@ -39,11 +39,18 @@ public class Bouncer : MonoBehaviour
             }
             else
             {
+                FindObjectOfType<GameSettings>().playerSettings[
+                    FindObjectOfType<GameSettings>().FindPlayerNumberByController
+                        (
+                        target.GetComponent<PlayerController>().controllerNumber
+                        )
+                    ].alive = false;
                 target.GetComponent<PlayerController>().enabled = false;
                 target.GetComponent<Collider2D>().enabled = false;
                 target.GetComponent<Renderer>().enabled = false;
                 charging = false;
                 returning = true;
+                target = null;
             }
         }
     }

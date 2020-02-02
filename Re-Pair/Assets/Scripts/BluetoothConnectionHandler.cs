@@ -21,7 +21,7 @@ public class BluetoothConnectionHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag.Equals("Player") && playerConnecting == null)
+        if (collision.GetComponent<PlayerController>() && playerConnecting == null)
         {
             playerConnecting = collision.gameObject;
             playerInRange = true;

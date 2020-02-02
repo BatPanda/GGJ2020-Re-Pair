@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class MusicManager : MonoBehaviour
 {
     private GameSettings gameSettings;
@@ -48,6 +48,14 @@ public class MusicManager : MonoBehaviour
         }
         music.clip = loadAudio[loadAudio.Count - 1];
         music.Play();
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     public void ChangeMusic(int playerNumber)
