@@ -10,6 +10,8 @@ public class GameTimer : MonoBehaviour
     public float endGameTimer = 10f;
     public float panicTime = 30f;
 
+    bool paused = false;
+
     int panicState = 0;
 
     public Text gameTimer;
@@ -30,7 +32,7 @@ public class GameTimer : MonoBehaviour
             }
             StartCoroutine(EndGame());
         }
-        else
+        else if (!paused)
         {
             timeElapsed += Time.deltaTime;
             if (gameTimeSeconds - timeElapsed < panicTime && panicState == 0)
@@ -77,5 +79,10 @@ public class GameTimer : MonoBehaviour
 
         SceneManager.LoadScene(0);
         yield break;
+    }
+
+    public void TogglePause()
+    {
+        paused = !paused;
     }
 }
