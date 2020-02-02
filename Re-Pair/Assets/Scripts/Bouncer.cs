@@ -19,6 +19,8 @@ public class Bouncer : MonoBehaviour
 
     public float moveSpeed = 0.1f;
 
+    public float playerCarryPosition = -0.05f;
+
     private void Start()
     {
         startPos = transform.position;
@@ -33,12 +35,20 @@ public class Bouncer : MonoBehaviour
             if(Vector2.Distance(transform.position, startPos) < 0.2f)
             {
                 returning = false;
+
+                foreach (Transform child in transform)
+                {
+                    if(child.GetComponent<SpriteRenderer>())
+                    {
+                        child.GetComponent<SpriteRenderer>().enabled = false;
+                    }
+                }
             }
         }
 
         if (charging)
         {
-            if (Vector2.Distance(transform.position, target.transform.position) > 0.2f)
+            if (Vector2.Distance(transform.position, target.transform.position) > 0.5f)
             {
                 transform.position = Vector2.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
             }
@@ -52,7 +62,9 @@ public class Bouncer : MonoBehaviour
                     ].alive = false;
                 target.GetComponent<PlayerController>().enabled = false;
                 target.GetComponent<Collider2D>().enabled = false;
-                target.GetComponent<Renderer>().enabled = false;
+                target.transform.eulerAngles = new Vector3(transform.rotation.x, transform.rotation.y, -90);
+                target.transform.parent = transform;
+                target.transform.localPosition = new Vector3(0, playerCarryPosition, 0); 
                 charging = false;
                 returning = true;
 
