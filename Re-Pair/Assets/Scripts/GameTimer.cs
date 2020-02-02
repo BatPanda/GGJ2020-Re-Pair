@@ -59,7 +59,7 @@ public class GameTimer : MonoBehaviour
 
                 StartCoroutine(EndGame());
         }
-        else if (!paused)
+        else if (!paused && gamePlaying)
         {
             timeElapsed += Time.deltaTime;
             if (gameTimeSeconds - timeElapsed < panicTime && panicState == 0)
@@ -91,7 +91,14 @@ public class GameTimer : MonoBehaviour
             {
                 player.enabled = false;
                 player.GetComponent<Collider2D>().enabled = false;
-                if (player.controllerNumber == FindObjectOfType<GameSettings>().playerSettings[winningPlayer].playerNum) winner = player.gameObject;
+                if (player.controllerNumber == FindObjectOfType<GameSettings>().playerSettings[winningPlayer].playerNum)
+                {
+                    winner = player.gameObject;
+                }
+                else
+                {
+                    player.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+                }
             }
         }
         while (timer < endGameTimer)

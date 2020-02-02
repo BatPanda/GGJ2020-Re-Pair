@@ -9,6 +9,9 @@ public class SetupScreen : MonoBehaviour
     public GameSettings gameSettings;
     public int gameScene = 1;
 
+    public float countdownTime = 3f;
+    public Text countdownText;
+
     public DetectController[] detectControllers;
     public MusicSelector[] musicSelectors;
 
@@ -81,10 +84,35 @@ public class SetupScreen : MonoBehaviour
                     }
                     if(allReady)
                     {
-                        SceneManager.LoadScene(gameScene);
+                        StartCoroutine(CountDownStartGame());
                     }
                 }
             }
         }
+    }
+
+    IEnumerator CountDownStartGame()
+    {
+        float timer = 0f;
+        float soundTime = 1f;
+        int secsLeft = 4;
+
+        countdownText.enabled = true;
+
+        while(timer < countdownTime)
+        {
+            if (soundTime >= 1f)
+            {
+                soundTime = 0f;
+                GetComponent<AudioSource>().Play();
+                secsLeft--;
+            }
+            countdownText.text = secsLeft.ToString();
+            timer += Time.deltaTime;
+            soundTime += Time.deltaTime;
+            yield return 0;
+        }
+
+        SceneManager.LoadScene(gameScene);
     }
 }

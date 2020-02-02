@@ -33,5 +33,6 @@ public class DetectController : MonoBehaviour
     {
         controllerNum = controllerID;
         GetComponentInChildren<Image>().enabled = true;
+        GetComponentInChildren<Image>().GetComponentInChildren<Text>().enabled = false;
     }
 }
