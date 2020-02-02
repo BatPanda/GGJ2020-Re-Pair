@@ -6,25 +6,54 @@ public class Bouncer : MonoBehaviour
 {
     public GameObject door;
 
-    private float moveSpeed = 0.1f;
+    private Vector2 startPos;
+    private GameObject target;
+
+    private bool charging = false;
+    private bool returning = false;
+
+    public float moveSpeed = 0.1f;
 
     private void Start()
     {
-        
+        startPos = transform.position;
     }
 
     private void Update()
     {
-        
+        if(returning)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, startPos, moveSpeed * Time.deltaTime);
+            
+            if(Vector2.Distance(transform.position, startPos) < 0.2f)
+            {
+                returning = false;
+            }
+        }
+
+        if (charging)
+        {
+            if (Vector2.Distance(transform.position, target.transform.position) > 0.2f)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
+            }
+            else
+            {
+                target.GetComponent<PlayerController>().enabled = false;
+                target.GetComponent<Collider2D>().enabled = false;
+                target.GetComponent<Renderer>().enabled = false;
+                charging = false;
+                returning = true;
+            }
+        }
     }
 
-    public void UpdateBouncer(Collider2D collision)
+    public void StartBouncer(Collider2D collision)
     {
         door.GetComponent<Animator>().SetTrigger("openDoor");
 
-        if(Vector2.Distance(transform.position, collision.transform.position) > 0.1f)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, collision.transform.position, moveSpeed) * Time.deltaTime;
-        }
+        target = collision.gameObject;
+        charging = true;
+        returning = false;
     }
 }

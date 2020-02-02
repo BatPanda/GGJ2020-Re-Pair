@@ -29,7 +29,6 @@ public class SpotlightScript : MonoBehaviour
             if (Input.GetButtonDown("Select" + GameObject.FindObjectOfType<ChooseCharacterScript>().playerControlling))
             {
                 characterCollider = collision;
-                startBouncerAnim = true;
             }
         }
 
@@ -40,18 +39,16 @@ public class SpotlightScript : MonoBehaviour
             if (Input.GetButtonDown("Select" + GameObject.FindObjectOfType<ChooseCharacterScript>().playerControlling))
             {
                 characterCollider = collision;
-                startBouncerAnim = true;
             }
         }
+
+        CheckCharacter(characterCollider);
 
     }
 
     private void Update()
     {
-        if(startBouncerAnim)
-        {
-            CheckCharacter(characterCollider);
-        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -89,13 +86,20 @@ public class SpotlightScript : MonoBehaviour
 
         if (collision.tag == "AI")
         {
-            Debug.Log("AI");
-
-            GameObject.FindObjectOfType<Bouncer>().UpdateBouncer(collision);
+            int playerNum = FindObjectOfType<ChooseCharacterScript>().GetCharacterUsing();
+            foreach (PlayerController player in FindObjectsOfType<PlayerController>())
+            {
+                if(player.controllerNumber == gameSettings.playerSettings[playerNum].playerNum)
+                {
+                    player.GetComponent<PlayerController>().enabled = false;
+                    player.GetComponent<Collider2D>().enabled = false;
+                    player.GetComponent<Renderer>().enabled = false;
+                }
+            }
         }
         else if(collision.tag == "Player")
         {
-            Debug.Log("Player");
+            GameObject.FindObjectOfType<Bouncer>().StartBouncer(collision);
         }
     }
 }
