@@ -15,11 +15,23 @@ public class GameTimer : MonoBehaviour
     int panicState = 0;
 
     public Text gameTimer;
+    public Text playerWinsText;
+
+    public GameObject[] Scores;
 
     private bool gamePlaying = true;
     private float timeElapsed = 0f;
 
+    private int[] rank;
+
     // Update is called once per frame
+
+    private void Awake()
+    {
+        playerWinsText.enabled = false;
+
+    }
+
     void Update()
     {
         if(timeElapsed >= gameTimeSeconds && gamePlaying)
@@ -33,16 +45,36 @@ public class GameTimer : MonoBehaviour
 
             GameObject[] Players = GameObject.FindGameObjectsWithTag("Player");
             float[] score = new float[Players.Length];
+            rank = new int[Players.Length];
             float highscore = 0;
             int winner = 0;
 
             for (int i = 0; i < Players.Length; i++)
             {
                 score[i] = Players[i].GetComponent<PlayerController>().score;
+
+                rank[i] = Players.Length - i - 1;
                 if (score[i] >= highscore)
                 {
-                    winner = i;
                     highscore = score[i];
+                    winner = i;
+                }
+            }
+
+            for (int j = Players.Length - 1; j > 0; j--)
+            {
+                for (int i = 0; i < j; i++)
+                {
+                    if (score[i] < score[i + 1])
+                    {
+                        float scorethis = score[i + 1];
+                        score[i + 1] = score[i];
+                        score[i] = scorethis;
+
+                        int rankthis = rank[i + 1];
+                        rank[i + 1] = rank[i];
+                        rank[i] = rankthis;
+                    }
                 }
             }
 
@@ -54,10 +86,10 @@ public class GameTimer : MonoBehaviour
                 {
                     Players[i].transform.eulerAngles = new Vector3(transform.rotation.x, transform.rotation.y, -90);
                 }
+                Scores[rank[i]].transform.position = new Vector3(-5, 2 - i, 1);
             }
 
-
-                StartCoroutine(EndGame());
+            StartCoroutine(EndGame());
         }
         else if (!paused && gamePlaying)
         {
@@ -119,4 +151,16 @@ public class GameTimer : MonoBehaviour
     {
         paused = !paused;
     }
+
+    public void TriggerWinCanvas()
+    {
+        gameTimer.enabled = false;
+
+        playerWinsText.enabled = true;
+
+        playerWinsText.text = "PLAYER" + "get player number" + " WINS!";
+
+        //start slider animation.
+    }
+
 }
