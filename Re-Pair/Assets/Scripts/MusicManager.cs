@@ -60,14 +60,24 @@ public class MusicManager : MonoBehaviour
 
     public void ChangeMusic(int playerNumber)
     {
-        music.Stop();
-        pairingFX.Play();
-        musicPlaying = gameSettings.playerSettings[playerNumber].musicSelected;
+        if (playerNumber != musicPlaying)
+        {
+            SpriteRenderer danceFloorRenderer = danceFloorSprite.GetComponent<SpriteRenderer>();
+            if (playerNumber < 0)
+            {
+                music.clip = loadAudio[loadAudio.Count - 1];
+            }
+            else
+            {
+                pairingFX.Play();
+                musicPlaying = gameSettings.playerSettings[playerNumber].musicSelected;
+                danceFloorRenderer.color = gameSettings.playerSettings[playerNumber].playerColor;
+                music.clip = loadAudio[playerNumber];
+            }
+            music.Stop();
 
-        SpriteRenderer danceFloorRenderer = danceFloorSprite.GetComponent<SpriteRenderer>();
-        danceFloorRenderer.color = gameSettings.playerSettings[playerNumber].playerColor;
-        music.clip = loadAudio[playerNumber];
-        music.Play();
+            music.Play();
+        }
     }
 
     public int MusicPlaying()

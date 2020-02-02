@@ -14,6 +14,9 @@ public class ScoreUIHandler : MonoBehaviour
     MusicManager musicManager;
     GameSettings gameSettings;
 
+    [SerializeField]
+    private int winningPlayer = -1;
+
     private void Awake()
     {
         scores = gameObject.GetComponentsInChildren<Slider>();
@@ -64,11 +67,11 @@ public class ScoreUIHandler : MonoBehaviour
 
     void updateOutline()
     {
-        int winningPlayer = 0;
+        int winningScore = 0;
 
         for (int i = 0; i < players.Length; i++)
         {
-            if (players[winningPlayer].score < players[i].score)
+            if (winningScore < players[i].score)
             {
                 winningPlayer = i;
             }
@@ -131,5 +134,10 @@ public class ScoreUIHandler : MonoBehaviour
                 animators[i].SetBool("music_playing", false);
             }
         }
+    }
+
+    public int GetWinningPlayer()
+    {
+        return winningPlayer;
     }
 }

@@ -8,6 +8,8 @@ public class UIHandler : MonoBehaviour
     Slider[] scores;
     PlayerController[] players;
 
+    private int winningPlayer = -1;
+
     private void Awake()
     {
         scores = gameObject.GetComponentsInChildren<Slider>();

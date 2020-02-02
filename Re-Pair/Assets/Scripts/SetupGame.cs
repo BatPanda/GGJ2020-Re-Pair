@@ -30,7 +30,7 @@ public class SetupGame : MonoBehaviour
             if(gameSettings.playerSettings[i].connected)
             {
                 GameObject newPlayer = Instantiate(playerPrefab[randomPlayerNumber]);
-                newPlayer.AddComponent<PlayerController>();
+                if(!newPlayer.GetComponent<PlayerController>()) newPlayer.AddComponent<PlayerController>();
                 newPlayer.GetComponent<PlayerController>().controllerNumber = gameSettings.playerSettings[i].playerNum;
                 newPlayer.GetComponent<Collider2D>().isTrigger = false;
                 Vector2 topLeft = Camera.main.ScreenToWorldPoint(new Vector2(50,50));
