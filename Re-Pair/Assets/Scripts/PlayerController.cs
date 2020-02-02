@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
 
     public bool canMove = true;
 
+    public bool won = false;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -23,7 +25,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        MovementManager();
+        if (won)
+        {
+            hasWon();
+        }
+        else
+        {
+            MovementManager();
+        }
+        
     }
 
     void MovementManager()
@@ -53,5 +63,15 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isWalking", false);
         }
         
+    }
+
+    private void hasWon()
+    {
+        Vector2 newPosition = transform.position;
+        Vector2 toADD = new Vector2(0, 0) - newPosition;
+        toADD.Normalize();
+
+        newPosition += toADD * movementSpeed * Time.deltaTime;
+        transform.position = newPosition;
     }
 }

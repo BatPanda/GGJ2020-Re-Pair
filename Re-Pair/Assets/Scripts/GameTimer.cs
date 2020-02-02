@@ -30,7 +30,34 @@ public class GameTimer : MonoBehaviour
             {
                 Ais[i].GetComponent<AiBehaviour>().leaveScreen = true;
             }
-            StartCoroutine(EndGame());
+
+            GameObject[] Players = GameObject.FindGameObjectsWithTag("Player");
+            float[] score = new float[Players.Length];
+            float highscore = 0;
+            int winner = 0;
+
+            for (int i = 0; i < Players.Length; i++)
+            {
+                score[i] = Players[i].GetComponent<PlayerController>().score;
+                if (score[i] >= highscore)
+                {
+                    winner = i;
+                    highscore = score[i];
+                }
+            }
+
+            Players[winner].GetComponent<PlayerController>().won = true;
+
+            for (int i = 0; i < Players.Length; i++)
+            {
+                if (i != winner)
+                {
+                    Players[i].transform.eulerAngles = new Vector3(transform.rotation.x, transform.rotation.y, -90);
+                }
+            }
+
+
+                StartCoroutine(EndGame());
         }
         else if (!paused)
         {

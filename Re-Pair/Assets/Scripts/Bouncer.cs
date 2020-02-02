@@ -7,15 +7,15 @@ public class Bouncer : MonoBehaviour
     public GameObject door;
 
     private Vector2 startPos;
-    private GameObject target;
-    private GameObject[] spawning;
+    private GameObject[] target = new GameObject[4];
+    private int targetNb = 0;
 
     private bool charging = false;
     private bool returning = false;
 
     private bool caughtPlayer = false;
     private const float playerSpawnTime = 10;
-    private float timer = 0;
+    private float[] timer = new float[4];
 
     public float moveSpeed = 0.1f;
 
@@ -48,72 +48,98 @@ public class Bouncer : MonoBehaviour
 
         if (charging)
         {
-            if (Vector2.Distance(transform.position, target.transform.position) > 0.5f)
+            if (Vector2.Distance(transform.position, target[targetNb].transform.position) > 0.5f)
             {
-                transform.position = Vector2.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, target[targetNb].transform.position, moveSpeed * Time.deltaTime);
             }
             else
             {
+                
                 FindObjectOfType<GameSettings>().playerSettings[
                     FindObjectOfType<GameSettings>().FindPlayerNumberByController
                         (
-                        target.GetComponent<PlayerController>().controllerNumber
+                        target[targetNb].GetComponent<PlayerController>().controllerNumber
                         )
                     ].alive = false;
-                target.GetComponent<PlayerController>().enabled = false;
-                target.GetComponent<Collider2D>().enabled = false;
-                target.transform.eulerAngles = new Vector3(transform.rotation.x, transform.rotation.y, -90);
-                target.transform.parent = transform;
-                target.transform.localPosition = new Vector3(0, playerCarryPosition, 0); 
+                target[targetNb].GetComponent<PlayerController>().enabled = false;
+                target[targetNb].GetComponent<Collider2D>().enabled = false;
+                target[targetNb].transform.eulerAngles = new Vector3(transform.rotation.x, transform.rotation.y, -90);
+                target[targetNb].transform.parent = transform;
+                target[targetNb].transform.localPosition = new Vector3(0, playerCarryPosition, 0); 
                 charging = false;
                 returning = true;
 
-                //spawning = target;
-                //target = null;
                 caughtPlayer = true;
-                timer = 0;
-                //Debug.LogError(spawnNb);
+                timer[targetNb] = 0;
             }
         }
 
         if (caughtPlayer)
         {
-            Debug.LogError("got Here1");
             GameObject[] Ais = GameObject.FindGameObjectsWithTag("AI");
-            
-
-            timer += Time.deltaTime;
-            if (timer >= playerSpawnTime)
-             {
-                Debug.LogError("got Here2");
-                int randomAi = Random.Range(0, Ais.Length);
-                Vector2 newPlayerPosition = Ais[randomAi].transform.position;
-
-                FindObjectOfType<GameSettings>().playerSettings[
-                            FindObjectOfType<GameSettings>().FindPlayerNumberByController
-                                (
-                                target.GetComponent<PlayerController>().controllerNumber
-                                )
-                            ].alive = true;
-                target.GetComponent<PlayerController>().enabled = true;
-                target.GetComponent<Collider2D>().enabled = true;
-                target.GetComponent<Renderer>().enabled = true;
-
-                target.transform.position = newPlayerPosition;
-
-                target.GetComponent<Animator>().runtimeAnimatorController = Ais[randomAi].GetComponent<Animator>().runtimeAnimatorController;
+           
 
 
+            for (int i = 0; i < target.Length; i++)
+            {
+                if (target[i] != null)
+                {
+                    timer[i] += Time.deltaTime;
+                }
+                
+                if (timer[i] >= playerSpawnTime)
+                {
+                    int randomAi = Random.Range(0, Ais.Length);
+                    Vector2 newPlayerPosition = Ais[randomAi].transform.position;
 
+                    FindObjectOfType<GameSettings>().playerSettings[
+                                FindObjectOfType<GameSettings>().FindPlayerNumberByController
+                                    (
+                                    target[i].GetComponent<PlayerController>().controllerNumber
+                                    )
+                                ].alive = true;
+                    target[i].GetComponent<PlayerController>().enabled = true;
+                    target[i].GetComponent<Collider2D>().enabled = true;
+                    target[i].GetComponent<Renderer>().enabled = true;
 
+                    target[i].transform.parent = null;
 
-                Destroy(Ais[randomAi]);
+                    target[i].transform.position = newPlayerPosition;
 
-                target = null;
+                    target[i].GetComponent<Animator>().runtimeAnimatorController = Ais[randomAi].GetComponent<Animator>().runtimeAnimatorController;
 
-                caughtPlayer = false;
-                timer = 0;
+                    target[i].transform.eulerAngles = new Vector3(transform.rotation.x, transform.rotation.y, 0);
+                    
+
+                    Destroy(Ais[randomAi]);
+
+                    target[i] = null;
+
+                    int caughtPlayerFalse = 0;
+
+                    for (int y = i; y < 3; y++)
+                    {
+                        if (target[y + 1] != null && target[y] == null)
+                        {
+                            target[y] = target[y + 1];
+                            target[y + 1] = null;
+                        }
+                        if (target[y] != null)
+                        {
+                            caughtPlayerFalse++;
+
+                        }
+                    }
+
+                    if (caughtPlayerFalse > 1)
+                    {
+                        caughtPlayer = false;
+                    }
+                    
+                    timer[i] = 0;
+                }
             }
+            
 
         }
             
@@ -124,7 +150,14 @@ public class Bouncer : MonoBehaviour
     {
         door.GetComponent<Animator>().SetTrigger("openDoor");
 
-        target = collision.gameObject;
+        targetNb = 0;
+        while (target[targetNb] != null)
+            {
+                targetNb++;
+            }
+
+        target[targetNb] = collision.gameObject;
+        timer[targetNb] = 0;
         charging = true;
         returning = false;
     }
